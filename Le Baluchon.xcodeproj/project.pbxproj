@@ -16,6 +16,8 @@
 		228B3119286322DF00B7B1F0 /* Le_BaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B3118286322DF00B7B1F0 /* Le_BaluchonTests.swift */; };
 		228B3123286322DF00B7B1F0 /* Le_BaluchonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B3122286322DF00B7B1F0 /* Le_BaluchonUITests.swift */; };
 		228B3125286322DF00B7B1F0 /* Le_BaluchonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B3124286322DF00B7B1F0 /* Le_BaluchonUITestsLaunchTests.swift */; };
+		228B31322863256500B7B1F0 /* sun.gif in Resources */ = {isa = PBXBuildFile; fileRef = 228B31312863256500B7B1F0 /* sun.gif */; };
+		228B313A2863343100B7B1F0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B31392863343100B7B1F0 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		228B311E286322DF00B7B1F0 /* Le BaluchonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		228B3122286322DF00B7B1F0 /* Le_BaluchonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Le_BaluchonUITests.swift; sourceTree = "<group>"; };
 		228B3124286322DF00B7B1F0 /* Le_BaluchonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Le_BaluchonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		228B31312863256500B7B1F0 /* sun.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sun.gif; sourceTree = "<group>"; };
+		228B31392863343100B7B1F0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,10 @@
 		228B3100286322DE00B7B1F0 /* Le Baluchon */ = {
 			isa = PBXGroup;
 			children = (
-				228B3101286322DE00B7B1F0 /* AppDelegate.swift */,
-				228B3103286322DE00B7B1F0 /* SceneDelegate.swift */,
-				228B3105286322DE00B7B1F0 /* ViewController.swift */,
-				228B3107286322DE00B7B1F0 /* Main.storyboard */,
-				228B310A286322DF00B7B1F0 /* Assets.xcassets */,
-				228B310C286322DF00B7B1F0 /* LaunchScreen.storyboard */,
+				228B313728632F0A00B7B1F0 /* Model */,
+				228B313428632ED700B7B1F0 /* View */,
+				228B313528632EE000B7B1F0 /* Controller */,
+				228B313328632EC900B7B1F0 /* Support Files */,
 				228B310F286322DF00B7B1F0 /* Info.plist */,
 			);
 			path = "Le Baluchon";
@@ -125,6 +127,50 @@
 				228B3124286322DF00B7B1F0 /* Le_BaluchonUITestsLaunchTests.swift */,
 			);
 			path = "Le BaluchonUITests";
+			sourceTree = "<group>";
+		};
+		228B313328632EC900B7B1F0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				228B313628632EF400B7B1F0 /* images */,
+				228B3101286322DE00B7B1F0 /* AppDelegate.swift */,
+				228B3103286322DE00B7B1F0 /* SceneDelegate.swift */,
+				228B310A286322DF00B7B1F0 /* Assets.xcassets */,
+				228B310C286322DF00B7B1F0 /* LaunchScreen.storyboard */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		228B313428632ED700B7B1F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				228B3107286322DE00B7B1F0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		228B313528632EE000B7B1F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				228B3105286322DE00B7B1F0 /* ViewController.swift */,
+				228B31392863343100B7B1F0 /* WeatherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		228B313628632EF400B7B1F0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				228B31312863256500B7B1F0 /* sun.gif */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		228B313728632F0A00B7B1F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228B310E286322DF00B7B1F0 /* LaunchScreen.storyboard in Resources */,
+				228B31322863256500B7B1F0 /* sun.gif in Resources */,
 				228B310B286322DF00B7B1F0 /* Assets.xcassets in Resources */,
 				228B3109286322DE00B7B1F0 /* Main.storyboard in Resources */,
 			);
@@ -259,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228B3106286322DE00B7B1F0 /* ViewController.swift in Sources */,
+				228B313A2863343100B7B1F0 /* WeatherViewController.swift in Sources */,
 				228B3102286322DE00B7B1F0 /* AppDelegate.swift in Sources */,
 				228B3104286322DE00B7B1F0 /* SceneDelegate.swift in Sources */,
 			);

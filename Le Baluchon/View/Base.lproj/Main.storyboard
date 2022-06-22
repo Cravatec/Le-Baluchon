@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="mO6-OB-IKz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Translate" id="iLT-cT-Bni"/>
+                    <tabBarItem key="tabBarItem" title="Translate" image="translate" id="iLT-cT-Bni"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJO-gy-z1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="dTT-fA-2b3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weather" id="iCI-a3-UQi"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="Weather" id="iCI-a3-UQi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Na-Hf-F6l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="4mD-Se-AIO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Money" id="Ffb-eW-nwa"/>
+                    <tabBarItem key="tabBarItem" title="Money" image="money-exchange" id="Ffb-eW-nwa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8l-iS-GeK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,6 +77,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Weather" width="29" height="29"/>
+        <image name="money-exchange" width="29" height="29"/>
+        <image name="translate" width="29" height="29"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

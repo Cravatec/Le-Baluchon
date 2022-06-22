@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,10 +14,10 @@
             <objects>
                 <viewController id="afd-MW-Sze" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dYP-kL-4DS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mO6-OB-IKz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Translate" image="translate" id="iLT-cT-Bni"/>
                 </viewController>
@@ -29,7 +30,7 @@
             <objects>
                 <viewController id="QqY-wA-qIo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgr-fZ-fbb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dTT-fA-2b3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -45,10 +46,10 @@
             <objects>
                 <viewController id="WRI-dU-rb5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YxK-tF-Sgp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4mD-Se-AIO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Money" image="money-exchange" id="Ffb-eW-nwa"/>
                 </viewController>
@@ -60,15 +61,17 @@
         <scene sceneID="ahE-nI-ILU">
             <objects>
                 <tabBarController id="M6g-73-ASY" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWM-nJ-GFn">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wWM-nJ-GFn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="barTintColor" name="AccentColor"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="WRI-dU-rb5" kind="relationship" relationship="viewControllers" id="gY9-ke-WzE"/>
-                        <segue destination="afd-MW-Sze" kind="relationship" relationship="viewControllers" id="bzQ-24-tRD"/>
                         <segue destination="QqY-wA-qIo" kind="relationship" relationship="viewControllers" id="6Az-ue-jH7"/>
+                        <segue destination="afd-MW-Sze" kind="relationship" relationship="viewControllers" id="bzQ-24-tRD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6A-6S-Ssp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -80,8 +83,20 @@
         <image name="Weather" width="29" height="29"/>
         <image name="money-exchange" width="29" height="29"/>
         <image name="translate" width="29" height="29"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

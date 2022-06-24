@@ -8,7 +8,7 @@
 import Foundation
 
 struct Apikey {
-    static let weatherApiKey = ""
+    static let weatherApiKey = "13221"
     static let fixerApiKey = ""
     static let translateApiKey = ""
 }

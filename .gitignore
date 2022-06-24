@@ -119,4 +119,4 @@ iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,macos
 
-./Le\ Baluchon/API_Key/apikey.swift
+API_Key/apikey.swift

@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Translate-->
+        <!--Translate View Controller-->
         <scene sceneID="Wat-kX-x13">
             <objects>
                 <viewController id="afd-MW-Sze" customClass="TranslateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,23 +20,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFN-ub-kJn">
-                                <rect key="frame" x="20" y="64" width="132" height="36"/>
+                                <rect key="frame" x="20" y="108" width="132" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-JQ-N2c">
-                                <rect key="frame" x="20" y="120" width="388" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write here in any language" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-JQ-N2c">
+                                <rect key="frame" x="20" y="164" width="388" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9IR-uO-Jmi">
-                                <rect key="frame" x="20" y="174" width="388" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Translate here in English" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9IR-uO-Jmi">
+                                <rect key="frame" x="20" y="218" width="388" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-Du-Ubh">
-                                <rect key="frame" x="134" y="238" width="160" height="160"/>
+                                <rect key="frame" x="134" y="282" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Cup-VM-XSB"/>
                                     <constraint firstAttribute="height" constant="160" id="QAB-EN-b3e"/>
@@ -63,7 +63,7 @@
                             <outletCollection property="gestureRecognizers" destination="6r3-L8-dDg" appends="YES" id="h04-kT-yMM"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Translate" image="translate" id="iLT-cT-Bni"/>
+                    <navigationItem key="navigationItem" id="yQg-Ig-tFB"/>
                     <connections>
                         <outlet property="text1" destination="zCe-JQ-N2c" id="ElN-Jl-yd1"/>
                         <outlet property="text2" destination="9IR-uO-Jmi" id="b0n-uD-X34"/>
@@ -77,9 +77,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1306.5420560747664" y="-108.20734341252701"/>
+            <point key="canvasLocation" x="2206.5420560747662" y="-108.20734341252701"/>
         </scene>
-        <!--Weather-->
+        <!--Weather View Controller-->
         <scene sceneID="gIw-XF-4yq">
             <objects>
                 <viewController id="QqY-wA-qIo" customClass="WeatherViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,13 +88,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5X-tW-F1p">
-                                <rect key="frame" x="19.999999999999993" y="64" width="118.33333333333331" height="36"/>
+                                <rect key="frame" x="19.999999999999993" y="108" width="118.33333333333331" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Jvl-8E-US3" userLabel="NY Stack View">
-                                <rect key="frame" x="20" y="130" width="388" height="160"/>
+                                <rect key="frame" x="20" y="174" width="388" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="WDU-AY-tBL">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -126,7 +126,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EV3-xd-QZe">
-                                                        <rect key="frame" x="2.3333333333333144" y="20.333333333333339" width="66.666666666666671" height="61.666666666666657"/>
+                                                        <rect key="frame" x="2.3333333333333144" y="20.333333333333311" width="66.666666666666671" height="61.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌡 24°C" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huE-rB-zla">
                                                                 <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="20.333333333333332"/>
@@ -142,7 +142,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6Q-eu-HNZ">
-                                                                <rect key="frame" x="0.0" y="40.666666666666657" width="66.666666666666671" height="21"/>
+                                                                <rect key="frame" x="0.0" y="40.666666666666686" width="66.666666666666671" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -168,20 +168,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Jvl-8E-US3" secondAttribute="trailing" id="Ydc-zI-gXp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weather" image="Weather" id="iCI-a3-UQi"/>
+                    <navigationItem key="navigationItem" id="QMv-ut-wGj"/>
                     <connections>
-                        <outlet property="descriptionNYWeather" destination="xLY-h2-sM3" id="Pe9-vw-kiF"/>
+                        <outlet property="descriptionNYWeatherLabel" destination="xLY-h2-sM3" id="Pe9-vw-kiF"/>
                         <outlet property="imageViewNY" destination="WDU-AY-tBL" id="8dN-zU-DyO"/>
                         <outlet property="nyStackView" destination="Jvl-8E-US3" id="lRY-8v-3EC"/>
-                        <outlet property="tempNYCelsius" destination="huE-rB-zla" id="fYm-pz-cxW"/>
-                        <outlet property="tempNYFahrenheit" destination="vU8-Oo-nrK" id="Fft-Kl-wYB"/>
+                        <outlet property="tempNYCelsiusLabel" destination="huE-rB-zla" id="fYm-pz-cxW"/>
+                        <outlet property="tempNYFahrenheitLabel" destination="vU8-Oo-nrK" id="Fft-Kl-wYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Na-Hf-F6l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308.75" y="552.46478873239437"/>
+            <point key="canvasLocation" x="2207.9439252336447" y="552.05183585313182"/>
         </scene>
-        <!--Money-->
+        <!--Money View Controller-->
         <scene sceneID="SdH-b3-O69">
             <objects>
                 <viewController id="WRI-dU-rb5" customClass="MoneyViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,13 +190,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbX-4b-j1f">
-                                <rect key="frame" x="19.999999999999993" y="64" width="96.333333333333314" height="36"/>
+                                <rect key="frame" x="19.999999999999993" y="108" width="96.333333333333314" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0I7-Yv-EiZ">
-                                <rect key="frame" x="20" y="140" width="388" height="84.333333333333314"/>
+                                <rect key="frame" x="20" y="184" width="388" height="84.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="GNX-Ef-dYd">
                                         <rect key="frame" x="0.0" y="0.0" width="190" height="84.333333333333329"/>
@@ -207,13 +207,13 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNi-Vn-XBw">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ to €" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNi-Vn-XBw">
                                                 <rect key="frame" x="45" y="50.333333333333343" width="100" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="Pfi-Ec-wug"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Pfi-Ec-wug"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="send"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -226,20 +226,20 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksb-O5-zed">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€ to $" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksb-O5-zed">
                                                 <rect key="frame" x="45" y="50.333333333333343" width="100" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="qr8-vL-Uay"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="qr8-vL-Uay"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="send"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Di5-j6-ma3">
-                                <rect key="frame" x="134" y="264.33333333333331" width="160" height="160"/>
+                                <rect key="frame" x="134" y="308.33333333333331" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="5kW-x3-VVs"/>
                                     <constraint firstAttribute="width" constant="160" id="S7K-P5-wIL"/>
@@ -263,7 +263,7 @@
                             <outletCollection property="gestureRecognizers" destination="21U-CJ-pFo" appends="YES" id="Cc8-uz-FpO"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Money" image="money-exchange" id="Ffb-eW-nwa"/>
+                    <navigationItem key="navigationItem" id="dDs-42-tfF"/>
                     <connections>
                         <outlet property="dollarTextField" destination="vNi-Vn-XBw" id="ogp-EH-fO4"/>
                         <outlet property="euroTextField" destination="ksb-O5-zed" id="bL8-ml-czF"/>
@@ -277,7 +277,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1309" y="-765"/>
+            <point key="canvasLocation" x="2207.9439252336447" y="-765.22678185745144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ahE-nI-ILU">
@@ -291,14 +291,71 @@
                         <color key="selectedImageTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="WRI-dU-rb5" kind="relationship" relationship="viewControllers" id="gY9-ke-WzE"/>
-                        <segue destination="afd-MW-Sze" kind="relationship" relationship="viewControllers" id="bzQ-24-tRD"/>
-                        <segue destination="QqY-wA-qIo" kind="relationship" relationship="viewControllers" id="6Az-ue-jH7"/>
+                        <segue destination="ig7-0t-Td9" kind="relationship" relationship="viewControllers" id="gY9-ke-WzE"/>
+                        <segue destination="oKz-l7-ZNq" kind="relationship" relationship="viewControllers" id="bzQ-24-tRD"/>
+                        <segue destination="JCF-pg-6hE" kind="relationship" relationship="viewControllers" id="6Az-ue-jH7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6A-6S-Ssp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="417" y="34"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="ZR4-zX-CqJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JCF-pg-6hE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weather" image="Weather" id="iCI-a3-UQi"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZaA-PZ-BcN">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QqY-wA-qIo" kind="relationship" relationship="rootViewController" id="LgI-97-TYl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Av-bf-Y6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1307.9439252336447" y="552.05183585313182"/>
+        </scene>
+        <!--Translate-->
+        <scene sceneID="kYP-hU-kMY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oKz-l7-ZNq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Translate" image="translate" id="iLT-cT-Bni"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hD9-BM-ep6">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="afd-MW-Sze" kind="relationship" relationship="rootViewController" id="YMG-Zz-PzZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BO8-cz-iJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306.5420560747664" y="-108.20734341252701"/>
+        </scene>
+        <!--Money-->
+        <scene sceneID="mIb-IE-mTr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ig7-0t-Td9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Money" image="money-exchange" id="Ffb-eW-nwa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kHg-y2-Jwf">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WRI-dU-rb5" kind="relationship" relationship="rootViewController" id="N4V-EK-Oo6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMq-B1-NCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1307.9439252336447" y="-765.22678185745144"/>
         </scene>
     </scenes>
     <resources>

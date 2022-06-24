@@ -9,19 +9,20 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
-    
-
-    @IBOutlet weak var descriptionNYWeather: UILabel!
+    @IBOutlet weak var descriptionNYWeatherLabel: UILabel!
     @IBOutlet weak var imageViewNY: UIImageView!
     @IBOutlet weak var nyStackView: UIStackView!
-    @IBOutlet weak var tempNYCelsius: UILabel!
-    @IBOutlet weak var tempNYFahrenheit: UILabel!
+    @IBOutlet weak var tempNYCelsiusLabel: UILabel!
+    @IBOutlet weak var tempNYFahrenheitLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let gifNY = UIImage.gifImageWithName("sun")
         imageViewNY.image = gifNY
-        
+        stackviewSetup()
+    }
+    
+    private func stackviewSetup() {
         nyStackView.layer.cornerRadius = 10
         nyStackView.clipsToBounds = true
         nyStackView.layer.borderWidth = 2.5

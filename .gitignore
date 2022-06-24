@@ -118,3 +118,5 @@ fastlane/test_output
 iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,macos
+
+/Users/sam/Documents/Xcode Folder/Le Baluchon/Le Baluchon/API_Key/apikey.swift

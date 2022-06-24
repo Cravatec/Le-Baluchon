@@ -14,11 +14,14 @@ class TranslateViewController: UIViewController {
 
     }
     
+    @IBOutlet weak var translateImage: UIImageView!
     @IBOutlet weak var text1: UITextField!
     @IBOutlet weak var text2: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let giftranslate = UIImage.gifImageWithName("worldwide")
+        translateImage.image = giftranslate
 }
 }

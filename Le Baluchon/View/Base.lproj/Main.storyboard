@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M6g-73-ASY">
-    <device id="retina6_7" orientation="portrait" appearance="dark"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -35,6 +35,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-Du-Ubh">
+                                <rect key="frame" x="134" y="238" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Cup-VM-XSB"/>
+                                    <constraint firstAttribute="height" constant="160" id="QAB-EN-b3e"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mO6-OB-IKz"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,9 +49,11 @@
                         <constraints>
                             <constraint firstItem="9IR-uO-Jmi" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="B7N-T4-zd9"/>
                             <constraint firstItem="zCe-JQ-N2c" firstAttribute="top" secondItem="QFN-ub-kJn" secondAttribute="bottom" constant="20" id="Lll-1Z-v13"/>
+                            <constraint firstItem="JSa-Du-Ubh" firstAttribute="centerX" secondItem="dYP-kL-4DS" secondAttribute="centerX" id="MGq-qb-gxF"/>
                             <constraint firstItem="zCe-JQ-N2c" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="MiU-80-KAX"/>
                             <constraint firstItem="9IR-uO-Jmi" firstAttribute="top" secondItem="zCe-JQ-N2c" secondAttribute="bottom" constant="20" id="Nbg-Rn-zkG"/>
                             <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QFN-ub-kJn" secondAttribute="trailing" symbolic="YES" id="S5v-17-SyD"/>
+                            <constraint firstItem="JSa-Du-Ubh" firstAttribute="top" secondItem="9IR-uO-Jmi" secondAttribute="bottom" constant="30" id="VhR-5J-VqR"/>
                             <constraint firstItem="QFN-ub-kJn" firstAttribute="top" secondItem="mO6-OB-IKz" secondAttribute="top" constant="20" id="cAV-3V-xT2"/>
                             <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="zCe-JQ-N2c" secondAttribute="trailing" constant="20" id="roj-jK-eQW"/>
                             <constraint firstItem="QFN-ub-kJn" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="uov-Ac-W1p"/>
@@ -58,6 +67,7 @@
                     <connections>
                         <outlet property="text1" destination="zCe-JQ-N2c" id="ElN-Jl-yd1"/>
                         <outlet property="text2" destination="9IR-uO-Jmi" id="b0n-uD-X34"/>
+                        <outlet property="translateImage" destination="JSa-Du-Ubh" id="NU7-FR-ycb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJO-gy-z1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -219,12 +229,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Di5-j6-ma3">
+                                <rect key="frame" x="134" y="264.33333333333331" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="5kW-x3-VVs"/>
+                                    <constraint firstAttribute="width" constant="160" id="S7K-P5-wIL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4mD-Se-AIO"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4mD-Se-AIO" firstAttribute="trailing" secondItem="0I7-Yv-EiZ" secondAttribute="trailing" constant="20" id="1h2-ca-ek0"/>
+                            <constraint firstItem="Di5-j6-ma3" firstAttribute="top" secondItem="0I7-Yv-EiZ" secondAttribute="bottom" constant="40" id="ZJd-Q0-XhR"/>
+                            <constraint firstItem="Di5-j6-ma3" firstAttribute="centerX" secondItem="0I7-Yv-EiZ" secondAttribute="centerX" id="ckf-vf-O2g"/>
                             <constraint firstItem="0I7-Yv-EiZ" firstAttribute="top" secondItem="pbX-4b-j1f" secondAttribute="bottom" constant="40" id="gwm-8q-bvF"/>
                             <constraint firstItem="pbX-4b-j1f" firstAttribute="leading" secondItem="4mD-Se-AIO" secondAttribute="leading" constant="20" id="l2s-yf-FHK"/>
                             <constraint firstItem="pbX-4b-j1f" firstAttribute="top" secondItem="4mD-Se-AIO" secondAttribute="top" constant="20" id="qsl-50-Pis"/>
@@ -239,6 +258,7 @@
                     <connections>
                         <outlet property="dollarTextField" destination="vNi-Vn-XBw" id="ogp-EH-fO4"/>
                         <outlet property="euroTextField" destination="ksb-O5-zed" id="bL8-ml-czF"/>
+                        <outlet property="moneyImage" destination="Di5-j6-ma3" id="IG9-Iv-feC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8l-iS-GeK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

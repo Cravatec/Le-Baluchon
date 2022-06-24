@@ -15,10 +15,13 @@ class MoneyViewController: UIViewController {
     }
     @IBOutlet weak var euroTextField: UITextField!
     @IBOutlet weak var dollarTextField: UITextField!
+    @IBOutlet weak var moneyImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let gifmoney = UIImage.gifImageWithName("euro")
+        moneyImage.image = gifmoney
+        
         // Do any additional setup after loading the view.
     }
     

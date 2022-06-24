@@ -12,10 +12,10 @@ class WeatherViewController: UIViewController {
     
 
     @IBOutlet weak var imageViewNY: UIImageView!
-    @IBOutlet weak var imageViewParis: UIImageView!
+//  @IBOutlet weak var imageViewParis: UIImageView!
     
     @IBOutlet weak var nyStackView: UIStackView!
-    @IBOutlet weak var parisStackView: UIStackView!
+ //   @IBOutlet weak var parisStackView: UIStackView!
     
     
     override func viewDidLoad() {

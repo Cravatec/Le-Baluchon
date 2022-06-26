@@ -9,6 +9,7 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var descriptionNYWeatherLabel: UILabel!
     @IBOutlet weak var imageViewNY: UIImageView!
     @IBOutlet weak var nyStackView: UIStackView!
@@ -20,6 +21,7 @@ class WeatherViewController: UIViewController {
         let gifNY = UIImage.gifImageWithName("sun")
         imageViewNY.image = gifNY
         stackviewSetup()
+        cardViewSetup()
     }
     
     private func stackviewSetup() {
@@ -28,4 +30,10 @@ class WeatherViewController: UIViewController {
         nyStackView.layer.borderWidth = 2.5
         nyStackView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
+    
+    private func cardViewSetup() {
+        cardView.layer.cornerRadius = 10
+        cardView.clipsToBounds = true
+    }
+    
 }

@@ -104,8 +104,20 @@
                                         <rect key="frame" x="162" y="336" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6o-3g-Cgz">
+                                        <rect key="frame" x="138.5" y="241.5" width="68.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Reload"/>
+                                        <connections>
+                                            <action selector="tappedReloadButton:" destination="QqY-wA-qIo" eventType="touchUpInside" id="d3D-W3-8ZI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="y6o-3g-Cgz" firstAttribute="centerX" secondItem="Tkl-On-EZd" secondAttribute="centerX" id="CIq-ec-34e"/>
+                                    <constraint firstItem="y6o-3g-Cgz" firstAttribute="centerY" secondItem="Tkl-On-EZd" secondAttribute="centerY" id="a8P-rh-RqH"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Jvl-8E-US3" userLabel="NY Stack View">
                                 <rect key="frame" x="16" y="130" width="343" height="160"/>
@@ -198,6 +210,7 @@
                         <outlet property="descriptionNYWeatherLabel" destination="xLY-h2-sM3" id="Pe9-vw-kiF"/>
                         <outlet property="imageViewNY" destination="WDU-AY-tBL" id="8dN-zU-DyO"/>
                         <outlet property="nyStackView" destination="Jvl-8E-US3" id="lRY-8v-3EC"/>
+                        <outlet property="reloadButton" destination="y6o-3g-Cgz" id="DSd-4Q-qaD"/>
                         <outlet property="tempNYCelsiusLabel" destination="huE-rB-zla" id="fYm-pz-cxW"/>
                         <outlet property="tempNYFahrenheitLabel" destination="vU8-Oo-nrK" id="Fft-Kl-wYB"/>
                     </connections>

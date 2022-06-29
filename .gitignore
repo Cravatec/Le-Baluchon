@@ -1,5 +1,7 @@
+# Exclude Api Key
 apikey.swift
-Le\ Baluchon/API_Key/
+Le\ Baluchon/API_Key/apikey.swift
+"Le Baluchon"/API_Key/apikey.swift
 
 # Created by https://www.toptal.com/developers/gitignore/api/swift,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,macos

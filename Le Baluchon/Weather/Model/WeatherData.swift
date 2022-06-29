@@ -10,5 +10,5 @@ import Foundation
 struct WeatherData {
     let latitude: Double
     let longitude: Double
-    let units: String    
+    let units: String
 }

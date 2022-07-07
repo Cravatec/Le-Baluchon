@@ -9,40 +9,37 @@ import Foundation
 
 class WeatherAPI {
     private var session = URLSession(configuration: .default)
-
+    
     init(session: URLSession) {
         self.session  = session
     }
-
+    
     // MARK: - Methods
     private func weatherRequest(city: String) -> URLRequest {
         let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
         var urlComponents = URLComponents(string: baseUrl)!
         urlComponents.queryItems = [URLQueryItem(name: "q", value: city),
-                                          URLQueryItem(name: "units", value: "metric")]
+                                    URLQueryItem(name: "units", value: "metric"),
+                                    URLQueryItem(name: "appid", value: Apikey.weatherApiKey)]
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "GET"
-        request.addValue(Apikey.weatherApiKey, forHTTPHeaderField: "appid")
         return request
     }
-
-    func fetchWeather(city: String, callback: @escaping (Error?, WeatherModel?) -> Void) {
+    
+    func fetchWeather(city: String, callback: @escaping (Result<WeatherModel, Error>) -> Void) {
         let request = weatherRequest(city: city)
         let task = session.dataTask(with: request) { data, response, error in
-            DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(error, nil)
+                    callback(.failure(error!))
                     return
                 }
                 do {
                     let responseJSON = try JSONDecoder().decode(WeatherResponse.self, from: data)
                     let weather = WeatherModel(apiModel: responseJSON)
-                    callback(nil, weather)
+                    callback(.success(weather))
                 } catch {
-                    callback(error, nil)
-                    return
+                    callback(.failure(error))
                 }
-            }
         }
         task.resume()
     }

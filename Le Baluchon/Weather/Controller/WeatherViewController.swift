@@ -63,40 +63,42 @@ class WeatherViewController: UIViewController {
         cardViewWhite.layer.borderWidth = 1
         cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
-   
-
-// MARK: - Methods
-private func weather(city: String) {
-    toggleActivityIndicator(shown: true)
     
-    let session = URLSession(configuration: .default)
-    WeatherAPI(session: session).fetchWeather(city: city) {(error, weather) in
-                        self.toggleActivityIndicator(shown: false)
-
-        if let weather = weather {
-            self.updateDataLabel(city: city, weather: weather)
-        } else {
-            self.presentAlert(error: error?.localizedDescription ?? "Erreur de chargement")
+    
+    // MARK: - Methods
+    private func weather(city: String) {
+        toggleActivityIndicator(shown: true)
+        
+        let session = URLSession(configuration: .default)
+        WeatherAPI(session: session).fetchWeather(city: city) { result in
+            DispatchQueue.main.async {
+                self.toggleActivityIndicator(shown: false)
+                switch result {
+                case .success(let weather):
+                    self.updateDataLabel(city: city, weather: weather)
+                case .failure(let error):
+                    self.presentAlert(error: error.localizedDescription)
+                }
+            }
         }
     }
-}
     private func toggleActivityIndicator(shown: Bool) {
-            self.reloadButton.isHidden = shown
-            self.activityIndicator.isHidden = !shown
-            self.activityIndicator.startAnimating()
-        }
-    
-private func updateDataLabel(city: String, weather: WeatherModel) {
-    if city == "New York" {
-        self.tempNYCelsiusLabel.text = "\(weather.temperatureString)°C"
-        self.imageViewNY.image = UIImage.gifImageWithName("\(weather.conditionName)")
-        self.descriptionNYWeatherLabel.text = weather.main
-    }    else if city == "Paris" {
-        self.tempParisCelsiusLabel.text = "\(weather.temperatureString)°C"
-        self.imageViewParis.image = UIImage.gifImageWithName("\(weather.conditionName)")
-        self.descriptionParisWeatherLabel.text = weather.main
+        self.reloadButton.isHidden = shown
+        self.activityIndicator.isHidden = !shown
+        self.activityIndicator.startAnimating()
     }
-}
+    
+    private func updateDataLabel(city: String, weather: WeatherModel) {
+        if city == "New York" {
+            self.tempNYCelsiusLabel.text = "\(weather.temperatureString)°C"
+            self.imageViewNY.image = UIImage.gifImageWithName("\(weather.conditionName)")
+            self.descriptionNYWeatherLabel.text = weather.main
+        }    else if city == "Paris" {
+            self.tempParisCelsiusLabel.text = "\(weather.temperatureString)°C"
+            self.imageViewParis.image = UIImage.gifImageWithName("\(weather.conditionName)")
+            self.descriptionParisWeatherLabel.text = weather.main
+        }
+    }
 }
 
 // MARK: - Extension UIViewController

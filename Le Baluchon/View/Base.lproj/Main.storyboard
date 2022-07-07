@@ -25,43 +25,65 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write here in any language" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-JQ-N2c">
-                                <rect key="frame" x="20" y="120" width="335" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Translate here in English" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9IR-uO-Jmi">
-                                <rect key="frame" x="20" y="174" width="335" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-Du-Ubh">
-                                <rect key="frame" x="107.5" y="238" width="160" height="160"/>
+                                <rect key="frame" x="107.5" y="438" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Cup-VM-XSB"/>
                                     <constraint firstAttribute="height" constant="160" id="QAB-EN-b3e"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ehx-7S-Lpd" userLabel="French Text View">
+                                <rect key="frame" x="20" y="120" width="335" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="LEx-p5-zM8"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-xa-gr3" userLabel="English Text View">
+                                <rect key="frame" x="20" y="268" width="335" height="147"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                            </textView>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Français" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDL-td-t5y">
+                                <rect key="frame" x="150.5" y="130" width="74" height="25.5"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="English" textAlignment="center" minimumFontSize="17" id="lJy-fq-8PZ" userLabel="English">
+                                <rect key="frame" x="150" y="296" width="74" height="25.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mO6-OB-IKz"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="9IR-uO-Jmi" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="B7N-T4-zd9"/>
-                            <constraint firstItem="zCe-JQ-N2c" firstAttribute="top" secondItem="QFN-ub-kJn" secondAttribute="bottom" constant="20" id="Lll-1Z-v13"/>
+                            <constraint firstItem="ehx-7S-Lpd" firstAttribute="centerX" secondItem="Mu5-xa-gr3" secondAttribute="centerX" id="6ud-Td-Cbb"/>
+                            <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="Mu5-xa-gr3" secondAttribute="trailing" constant="20" id="CVZ-kF-eet"/>
                             <constraint firstItem="JSa-Du-Ubh" firstAttribute="centerX" secondItem="dYP-kL-4DS" secondAttribute="centerX" id="MGq-qb-gxF"/>
-                            <constraint firstItem="zCe-JQ-N2c" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="MiU-80-KAX"/>
-                            <constraint firstItem="9IR-uO-Jmi" firstAttribute="top" secondItem="zCe-JQ-N2c" secondAttribute="bottom" constant="20" id="Nbg-Rn-zkG"/>
+                            <constraint firstItem="vDL-td-t5y" firstAttribute="centerX" secondItem="dYP-kL-4DS" secondAttribute="centerX" id="Osd-vY-wzg"/>
+                            <constraint firstItem="vDL-td-t5y" firstAttribute="top" secondItem="QFN-ub-kJn" secondAttribute="bottom" constant="30" id="PY1-7Y-g1U"/>
                             <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QFN-ub-kJn" secondAttribute="trailing" symbolic="YES" id="S5v-17-SyD"/>
-                            <constraint firstItem="JSa-Du-Ubh" firstAttribute="top" secondItem="9IR-uO-Jmi" secondAttribute="bottom" constant="30" id="VhR-5J-VqR"/>
+                            <constraint firstItem="JSa-Du-Ubh" firstAttribute="top" secondItem="Mu5-xa-gr3" secondAttribute="bottom" constant="23" id="Tx4-97-92H"/>
                             <constraint firstItem="QFN-ub-kJn" firstAttribute="top" secondItem="mO6-OB-IKz" secondAttribute="top" constant="20" id="cAV-3V-xT2"/>
-                            <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="zCe-JQ-N2c" secondAttribute="trailing" constant="20" id="roj-jK-eQW"/>
+                            <constraint firstItem="Mu5-xa-gr3" firstAttribute="centerX" secondItem="dYP-kL-4DS" secondAttribute="centerX" id="ckT-Df-dLR"/>
+                            <constraint firstItem="ehx-7S-Lpd" firstAttribute="centerX" secondItem="dYP-kL-4DS" secondAttribute="centerX" id="mHw-pe-4dJ"/>
+                            <constraint firstItem="ehx-7S-Lpd" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="niT-lA-AeQ"/>
+                            <constraint firstItem="Mu5-xa-gr3" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="nu6-XZ-cmq"/>
+                            <constraint firstItem="mO6-OB-IKz" firstAttribute="bottom" secondItem="JSa-Du-Ubh" secondAttribute="bottom" constant="20" id="p42-6e-pbe"/>
+                            <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="ehx-7S-Lpd" secondAttribute="trailing" constant="20" id="s6l-NM-fRL"/>
                             <constraint firstItem="QFN-ub-kJn" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="uov-Ac-W1p"/>
-                            <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="9IR-uO-Jmi" secondAttribute="trailing" constant="20" id="zF2-ON-QNj"/>
+                            <constraint firstItem="ehx-7S-Lpd" firstAttribute="top" secondItem="QFN-ub-kJn" secondAttribute="bottom" constant="20" id="xgi-lf-lv6"/>
+                            <constraint firstItem="Mu5-xa-gr3" firstAttribute="top" secondItem="ehx-7S-Lpd" secondAttribute="bottom" constant="20" id="zAk-dd-HKO"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="6r3-L8-dDg" appends="YES" id="h04-kT-yMM"/>
@@ -69,8 +91,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="yQg-Ig-tFB"/>
                     <connections>
-                        <outlet property="text1" destination="zCe-JQ-N2c" id="ElN-Jl-yd1"/>
-                        <outlet property="text2" destination="9IR-uO-Jmi" id="b0n-uD-X34"/>
+                        <outlet property="englishPlaceHolder" destination="lJy-fq-8PZ" id="N2H-bn-WNm"/>
+                        <outlet property="englishTextView" destination="Mu5-xa-gr3" id="zcW-5G-sC1"/>
+                        <outlet property="frenchPlaceHolder" destination="vDL-td-t5y" id="ofN-cv-lt6"/>
+                        <outlet property="frenchTextView" destination="ehx-7S-Lpd" id="lDu-bw-QWC"/>
                         <outlet property="translateImage" destination="JSa-Du-Ubh" id="NU7-FR-ycb"/>
                     </connections>
                 </viewController>
@@ -481,6 +505,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

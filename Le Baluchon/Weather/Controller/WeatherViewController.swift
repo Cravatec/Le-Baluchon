@@ -70,18 +70,19 @@ class WeatherViewController: UIViewController {
         toggleActivityIndicator(shown: true)
         
         let session = URLSession(configuration: .default)
-        WeatherAPI(session: session).fetchWeather(city: city) { result in
+        WeatherAPI(session: session).fetchWeather(city: city) { [weak self] result in
             DispatchQueue.main.async {
-                self.toggleActivityIndicator(shown: false)
+                self?.toggleActivityIndicator(shown: false)
                 switch result {
                 case .success(let weather):
-                    self.updateDataLabel(city: city, weather: weather)
+                    self?.updateDataLabel(city: city, weather: weather)
                 case .failure(let error):
-                    self.presentAlert(error: error.localizedDescription)
+                    self?.presentAlert(error: error.localizedDescription)
                 }
             }
         }
     }
+    
     private func toggleActivityIndicator(shown: Bool) {
         self.reloadButton.isHidden = shown
         self.activityIndicator.isHidden = !shown

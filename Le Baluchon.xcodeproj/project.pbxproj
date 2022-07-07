@@ -162,6 +162,8 @@
 		228B3100286322DE00B7B1F0 /* Le Baluchon */ = {
 			isa = PBXGroup;
 			children = (
+				22D15D352876E12B0025189D /* Money */,
+				22D15D322876E0EA0025189D /* Translate */,
 				226F0678286618C1001B416D /* Weather */,
 				226F06712865F7ED001B416D /* API_Key */,
 				228B313728632F0A00B7B1F0 /* Shared Model */,
@@ -214,8 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				228B3105286322DE00B7B1F0 /* ViewController.swift */,
-				22FFD4AB2865C56500304F76 /* MoneyViewController.swift */,
-				226F06672865E1B5001B416D /* TranslateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +239,54 @@
 				22D6D6DE2864BEE0007FB35B /* SwiftGif.swift */,
 			);
 			path = "Shared Model";
+			sourceTree = "<group>";
+		};
+		22D15D322876E0EA0025189D /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				22D15D332876E0F80025189D /* Controller */,
+				22D15D342876E1010025189D /* Model */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		22D15D332876E0F80025189D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				226F06672865E1B5001B416D /* TranslateViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22D15D342876E1010025189D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22D15D352876E12B0025189D /* Money */ = {
+			isa = PBXGroup;
+			children = (
+				22D15D372876E13C0025189D /* Controller */,
+				22D15D362876E1340025189D /* Model */,
+			);
+			path = Money;
+			sourceTree = "<group>";
+		};
+		22D15D362876E1340025189D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22D15D372876E13C0025189D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22FFD4AB2865C56500304F76 /* MoneyViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

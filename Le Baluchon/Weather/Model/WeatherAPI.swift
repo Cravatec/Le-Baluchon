@@ -8,63 +8,43 @@
 import Foundation
 
 class WeatherAPI {
-    
-    static var shared = WeatherAPI()
-    private init() {}
-    
-    private let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
-    
-    private var task: URLSessionDataTask?
-    private let session = URLSession(configuration: .default)
-    
-    private func buildNYWeatherRequest() -> URLRequest? {
-        var urlComponents = URLComponents(string: baseUrl)
-        urlComponents?.queryItems = [URLQueryItem(name: "lat", value: NYLocation.latitude),
-                                     URLQueryItem(name: "lon", value: NYLocation.longitude)]
-        
-        if let url = urlComponents?.url {
-            var urlRequest = URLRequest(url: url)
-            urlRequest.httpMethod = "GET"
-            urlRequest.addValue(Apikey.weatherApiKey, forHTTPHeaderField: "appid")
-            return urlRequest
-        }
-        return nil
+    private var session = URLSession(configuration: .default)
+
+    init(session: URLSession) {
+        self.session  = session
     }
-    
-    
-    func fetchWeather(callback: @escaping (Bool, Weather?) -> Void) {
-        guard let request = buildNYWeatherRequest() else {
-            return
+
+    // MARK: - Methods
+    private func weatherRequest(city: String) -> URLRequest {
+        let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
+        var urlComponents = URLComponents(string: baseUrl)!
+        urlComponents.queryItems = [URLQueryItem(name: "q", value: city),
+                                          URLQueryItem(name: "units", value: "metric"),
+                                           URLQueryItem(name: "appid", value: Apikey.weatherApiKey)]
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "GET"
+        return request
+    }
+
+    func fetchJSON(city: String, callback: @escaping (Error?, WeatherModel?) -> Void) {
+        let request = weatherRequest(city: city)
+        let task = session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    callback(error, nil)
+                    return
+                }
+                do {
+                    let responseJSON = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                    let weather = WeatherModel(apiModel: responseJSON)
+                    callback(nil, weather)
+                } catch {
+                    callback(error, nil)
+                    return
+                }
+            }
         }
-        
-        task = session.dataTask(with: request) { data, response, error in
-            
-            guard let data = data, error == nil else {
-                callback(false, nil)
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                callback(false, nil)
-                return
-            }
-            
-            guard let responseJSON = try? JSONDecoder().decode([String: String].self, from: data),
-                  let main = responseJSON["main"],
-                  let description = responseJSON["description"],
-                  let icon = responseJSON["icon"] else {
-                callback(false, nil)
-                return
-            }
-            let weather = Weather(main: main, description: description, icon: icon)
-            callback(true, weather)
-        }
-        self.task?.resume()
+        task.resume()
     }
 }
 
-
-struct NYLocation {
-    static let latitude: String = "40.71278"
-    static let longitude: String = "-74.005941"
-}

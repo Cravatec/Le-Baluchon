@@ -70,7 +70,7 @@ private func weather(city: String) {
     toggleActivityIndicator(shown: true)
     
     let session = URLSession(configuration: .default)
-    WeatherAPI(session: session).fetchJSON(city: city) {(error, weather) in
+    WeatherAPI(session: session).fetchWeather(city: city) {(error, weather) in
                         self.toggleActivityIndicator(shown: false)
 
         if let weather = weather {

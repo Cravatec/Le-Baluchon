@@ -19,14 +19,14 @@ class WeatherAPI {
         let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
         var urlComponents = URLComponents(string: baseUrl)!
         urlComponents.queryItems = [URLQueryItem(name: "q", value: city),
-                                          URLQueryItem(name: "units", value: "metric"),
-                                           URLQueryItem(name: "appid", value: Apikey.weatherApiKey)]
+                                          URLQueryItem(name: "units", value: "metric")]
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "GET"
+        request.addValue(Apikey.weatherApiKey, forHTTPHeaderField: "appid")
         return request
     }
 
-    func fetchJSON(city: String, callback: @escaping (Error?, WeatherModel?) -> Void) {
+    func fetchWeather(city: String, callback: @escaping (Error?, WeatherModel?) -> Void) {
         let request = weatherRequest(city: city)
         let task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {

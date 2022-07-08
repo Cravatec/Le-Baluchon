@@ -51,12 +51,12 @@ class WeatherViewController: UIViewController {
         // nyStackView.layer.borderWidth = 1.5
         // nyStackView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
-    
+
     private func cardViewBlackSetup() {
         cardViewBlack.layer.cornerRadius = 10
         cardViewBlack.clipsToBounds = true
     }
-    
+
     private func cardViewWhiteSetup() {
         cardViewWhite.layer.cornerRadius = 10
         cardViewWhite.clipsToBounds = true
@@ -91,17 +91,16 @@ class WeatherViewController: UIViewController {
     
     private func updateDataLabel(city: String, weather: WeatherModel) {
         if city == "New York" {
-            self.tempNYCelsiusLabel.text = "\(weather.temperatureString)°C"
+            self.tempNYCelsiusLabel.text = "🌡\(weather.temperatureString)°C"
             self.imageViewNY.image = UIImage.gifImageWithName("\(weather.conditionName)")
             self.descriptionNYWeatherLabel.text = weather.main
         }    else if city == "Paris" {
-            self.tempParisCelsiusLabel.text = "\(weather.temperatureString)°C"
+            self.tempParisCelsiusLabel.text = "🌡\(weather.temperatureString)°C"
             self.imageViewParis.image = UIImage.gifImageWithName("\(weather.conditionName)")
             self.descriptionParisWeatherLabel.text = weather.main
         }
     }
 }
-
 // MARK: - Extension UIViewController
 extension UIViewController {
     func presentAlert(error: String) {

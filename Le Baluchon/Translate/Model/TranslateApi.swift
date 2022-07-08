@@ -40,8 +40,10 @@ class TranslateApi {
     private func createTranslateRequest(text: String) -> URLRequest {
         var urlConponents = URLComponents(string: "https://translation.googleapis.com/language/translate/v2")!
         urlConponents.queryItems = [URLQueryItem(name: "q", value: text),
-                                    URLQueryItem(name: "key", value: Apikey.translateApiKey), URLQueryItem(name: "source", value: "fr"),
-                                    URLQueryItem(name: "target", value: "en")]
+                                    URLQueryItem(name: "key", value: Apikey.translateApiKey),
+                                   // URLQueryItem(name: "source", value: "fr"),
+                                    URLQueryItem(name: "target", value: "en"),
+                                    URLQueryItem(name: "format", value: "text")]
         var request = URLRequest(url: urlConponents.url!)
         request.httpMethod = "GET"
         return request

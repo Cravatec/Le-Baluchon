@@ -19,6 +19,8 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var englishTextView: UITextView!
     @IBOutlet weak var frenchPlaceHolder: UITextField!
     @IBOutlet weak var englishPlaceHolder: UITextField!
+    @IBOutlet weak var cardViewBlack: UIView!
+    @IBOutlet weak var cardViewWhite: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class TranslateViewController: UIViewController {
         translateImage.image = giftranslate
         frenchTextView.delegate = self
         border()
+        cardViewBlackSetup()
+        cardViewWhiteSetup()
     }
     
     // MARK: - Methods
@@ -50,7 +54,20 @@ class TranslateViewController: UIViewController {
         englishTextView.layer.borderWidth = 1.5
         englishTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
+
+    private func cardViewBlackSetup() {
+       cardViewBlack.layer.cornerRadius = 10
+       cardViewBlack.clipsToBounds = true
+   }
+
+   private func cardViewWhiteSetup() {
+       cardViewWhite.layer.cornerRadius = 10
+       cardViewWhite.clipsToBounds = true
+       cardViewWhite.layer.borderWidth = 1
+       cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+   }
 }
+
 extension TranslateViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {

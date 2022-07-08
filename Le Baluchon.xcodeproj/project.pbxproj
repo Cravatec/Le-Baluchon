@@ -31,6 +31,7 @@
 		22D15D3D287706B10025189D /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D15D3C287706B10025189D /* WeatherResponse.swift */; };
 		22D6D6DF2864BEE0007FB35B /* SwiftGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6D6DE2864BEE0007FB35B /* SwiftGif.swift */; };
 		22D6D6E12864C345007FB35B /* rain.gif in Resources */ = {isa = PBXBuildFile; fileRef = 22D6D6E02864C345007FB35B /* rain.gif */; };
+		22EBC3B62878798200C565A3 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EBC3B52878798200C565A3 /* extensions.swift */; };
 		22FFD4AC2865C56500304F76 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFD4AB2865C56500304F76 /* MoneyViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		22D15D3C287706B10025189D /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		22D6D6DE2864BEE0007FB35B /* SwiftGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGif.swift; sourceTree = "<group>"; };
 		22D6D6E02864C345007FB35B /* rain.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rain.gif; sourceTree = "<group>"; };
+		22EBC3B52878798200C565A3 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		22FFD4AB2865C56500304F76 /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				22D6D6DE2864BEE0007FB35B /* SwiftGif.swift */,
+				22EBC3B52878798200C565A3 /* extensions.swift */,
 			);
 			path = "Shared Model";
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				22D15D3D287706B10025189D /* WeatherResponse.swift in Sources */,
 				228B3106286322DE00B7B1F0 /* ViewController.swift in Sources */,
 				228B313A2863343100B7B1F0 /* WeatherViewController.swift in Sources */,
+				22EBC3B62878798200C565A3 /* extensions.swift in Sources */,
 				228B3102286322DE00B7B1F0 /* AppDelegate.swift in Sources */,
 				22D15D3B2876E70F0025189D /* Translate.swift in Sources */,
 				22D6D6DF2864BEE0007FB35B /* SwiftGif.swift in Sources */,

@@ -48,11 +48,11 @@ class TranslateViewController: UIViewController {
         frenchTextView.layer.cornerRadius = 10
         frenchTextView.clipsToBounds = true
         frenchTextView.layer.borderWidth = 1.5
-        frenchTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+        frenchTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         englishTextView.layer.cornerRadius = 10
         englishTextView.clipsToBounds = true
         englishTextView.layer.borderWidth = 1.5
-        englishTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+        englishTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
     }
 
     private func cardViewBlackSetup() {

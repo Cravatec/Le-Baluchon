@@ -43,12 +43,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
                             </textView>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDL-td-t5y">
-                                <rect key="frame" x="90.333333333333329" y="179" width="247.66666666666669" height="26"/>
-                                <string key="placeholder">🇫🇷 Écrivez en français ici 🇫🇷
-🇮🇹 Scrivi in ​​italiano qui 🇮🇹
-🇪🇸 Escriba aquí en español 🇪🇸
-🇫🇮 Kirjoita tänne suomeksi 🇫🇮</string>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write here in 🇫🇷, 🇮🇹,🇪🇸,🇫🇮…" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDL-td-t5y">
+                                <rect key="frame" x="89.333333333333329" y="179" width="249.66666666666669" height="26"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -72,7 +68,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
                             </textView>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="🇬🇧Get the English translation here🇬🇧" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-fq-8PZ" userLabel="English Placeholder">
-                                <rect key="frame" x="52" y="328" width="324" height="25"/>
+                                <rect key="frame" x="52" y="327.66666666666669" width="324" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -142,21 +138,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Icu-8m-zpV" userLabel="CardBlack">
-                                <rect key="frame" x="15" y="103" width="398" height="740"/>
+                                <rect key="frame" x="15" y="88" width="398" height="755"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5X-tW-F1p">
-                                <rect key="frame" x="19.999999999999993" y="108" width="118.33333333333331" height="36"/>
+                                <rect key="frame" x="19.999999999999993" y="93" width="118.33333333333331" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-On-EZd" userLabel="CardWhite">
-                                <rect key="frame" x="15" y="148" width="398" height="695"/>
+                                <rect key="frame" x="15" y="128" width="398" height="715"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Wfi-Q5-gp2" userLabel="Paris Stack View">
-                                <rect key="frame" x="20" y="354" width="388" height="160"/>
+                                <rect key="frame" x="20" y="339" width="388" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="LOR-cV-jcG">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -219,7 +215,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Jvl-8E-US3" userLabel="NY Stack View">
-                                <rect key="frame" x="20" y="174" width="388" height="160"/>
+                                <rect key="frame" x="20" y="159" width="388" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="WDU-AY-tBL">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -302,9 +298,9 @@
                             <constraint firstItem="dTT-fA-2b3" firstAttribute="bottom" secondItem="huQ-bM-bod" secondAttribute="bottom" constant="15" id="HMX-Ic-BAh"/>
                             <constraint firstItem="dTT-fA-2b3" firstAttribute="trailing" secondItem="Tkl-On-EZd" secondAttribute="trailing" constant="15" id="KKd-Sb-t9Y"/>
                             <constraint firstItem="dTT-fA-2b3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o5X-tW-F1p" secondAttribute="trailing" symbolic="YES" id="Kug-9R-Q91"/>
-                            <constraint firstItem="Icu-8m-zpV" firstAttribute="top" secondItem="dTT-fA-2b3" secondAttribute="top" constant="15" id="NjL-PT-Hiq"/>
+                            <constraint firstItem="Icu-8m-zpV" firstAttribute="top" secondItem="dTT-fA-2b3" secondAttribute="top" id="NjL-PT-Hiq"/>
                             <constraint firstItem="o5X-tW-F1p" firstAttribute="leading" secondItem="dTT-fA-2b3" secondAttribute="leading" constant="20" id="Ojm-kG-Oro"/>
-                            <constraint firstItem="o5X-tW-F1p" firstAttribute="top" secondItem="dTT-fA-2b3" secondAttribute="top" constant="20" id="PWZ-QQ-33w"/>
+                            <constraint firstItem="o5X-tW-F1p" firstAttribute="top" secondItem="dTT-fA-2b3" secondAttribute="top" constant="5" id="PWZ-QQ-33w"/>
                             <constraint firstItem="dTT-fA-2b3" firstAttribute="trailing" secondItem="Icu-8m-zpV" secondAttribute="trailing" constant="15" id="TRQ-Od-D4G"/>
                             <constraint firstItem="Jvl-8E-US3" firstAttribute="top" secondItem="o5X-tW-F1p" secondAttribute="bottom" constant="30" id="VHr-0s-qp9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wfi-Q5-gp2" secondAttribute="trailing" id="WVD-4n-Bnz"/>
@@ -313,7 +309,7 @@
                             <constraint firstItem="Tkl-On-EZd" firstAttribute="leading" secondItem="dTT-fA-2b3" secondAttribute="leading" constant="15" id="bSa-jv-PfU"/>
                             <constraint firstItem="Wfi-Q5-gp2" firstAttribute="top" secondItem="Jvl-8E-US3" secondAttribute="bottom" constant="20" id="dRC-xd-vsm"/>
                             <constraint firstItem="dTT-fA-2b3" firstAttribute="bottom" secondItem="y6o-3g-Cgz" secondAttribute="bottom" constant="15" id="e7c-Jk-UZ5"/>
-                            <constraint firstItem="Tkl-On-EZd" firstAttribute="top" secondItem="dTT-fA-2b3" secondAttribute="top" constant="60" id="eig-nz-48J"/>
+                            <constraint firstItem="Tkl-On-EZd" firstAttribute="top" secondItem="dTT-fA-2b3" secondAttribute="top" constant="40" id="eig-nz-48J"/>
                             <constraint firstItem="Wfi-Q5-gp2" firstAttribute="leading" secondItem="Kgr-fZ-fbb" secondAttribute="leadingMargin" id="enw-x2-xUw"/>
                             <constraint firstItem="huQ-bM-bod" firstAttribute="centerX" secondItem="Kgr-fZ-fbb" secondAttribute="centerX" id="uky-PG-Z9p"/>
                             <constraint firstItem="y6o-3g-Cgz" firstAttribute="centerX" secondItem="Kgr-fZ-fbb" secondAttribute="centerX" id="vqJ-1w-Zcd"/>

@@ -50,7 +50,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-Du-Ubh">
-                                <rect key="frame" x="134" y="663" width="160" height="160"/>
+                                <rect key="frame" x="134" y="682" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="999" constant="160" id="CBf-hd-4jq"/>
                                     <constraint firstAttribute="height" priority="999" constant="160" id="PkA-1R-DPE"/>
@@ -68,10 +68,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
                             </textView>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="🇬🇧Get the English translation here🇬🇧" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-fq-8PZ" userLabel="English Placeholder">
-                                <rect key="frame" x="52" y="327.66666666666669" width="324" height="25"/>
+                                <rect key="frame" x="72" y="328.33333333333331" width="284.33333333333331" height="23.333333333333314"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -97,7 +97,7 @@
                             <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="3eU-oK-JLD" secondAttribute="trailing" constant="15" id="k1z-cs-Yvr"/>
                             <constraint firstItem="lJy-fq-8PZ" firstAttribute="centerX" secondItem="Mu5-xa-gr3" secondAttribute="centerX" id="q8e-LI-m56"/>
                             <constraint firstItem="lJy-fq-8PZ" firstAttribute="centerY" secondItem="Mu5-xa-gr3" secondAttribute="centerY" id="rRN-PT-Ll4"/>
-                            <constraint firstItem="mO6-OB-IKz" firstAttribute="bottom" secondItem="JSa-Du-Ubh" secondAttribute="bottom" constant="20" id="sPd-o5-unc"/>
+                            <constraint firstItem="mO6-OB-IKz" firstAttribute="bottom" secondItem="JSa-Du-Ubh" secondAttribute="bottom" constant="1" id="sPd-o5-unc"/>
                             <constraint firstItem="Mu5-xa-gr3" firstAttribute="centerX" secondItem="dYP-kL-4DS" secondAttribute="centerX" id="urQ-dU-xW4"/>
                             <constraint firstItem="Q8A-n7-Uqe" firstAttribute="centerX" secondItem="dYP-kL-4DS" secondAttribute="centerX" id="yQf-W5-47R"/>
                             <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="Q8A-n7-Uqe" secondAttribute="trailing" constant="15" id="zFu-PE-Ssr"/>

@@ -94,12 +94,20 @@ class WeatherViewController: UIViewController {
             self.tempNYCelsiusLabel.text = "🌡\(weather.temperatureString)°C"
             self.imageViewNY.image = UIImage.gifImageWithName("\(weather.conditionName)")
             self.descriptionNYWeatherLabel.text = weather.main
+            self.tempNYFahrenheitLabel.text = "🌡\(CelsiusToFahrenheit(temp: weather.temperature))°F"
         }    else if city == "Paris" {
             self.tempParisCelsiusLabel.text = "🌡\(weather.temperatureString)°C"
             self.imageViewParis.image = UIImage.gifImageWithName("\(weather.conditionName)")
             self.descriptionParisWeatherLabel.text = weather.main
+            self.tempParisFahrenheitLabel.text = "🌡\(CelsiusToFahrenheit(temp: weather.temperature))°F"
         }
     }
+    
+    /** Convert  Celsius Farenheit and return the result in Int */
+      func CelsiusToFahrenheit(temp: Double) -> Int {
+          return Int((temp * 9/5 + 32))
+      }
+    
 }
 // MARK: - Extension UIViewController
 extension UIViewController {

@@ -31,9 +31,13 @@ class TranslateViewController: UIViewController {
         let giftranslate = UIImage.gifImageWithName("worldwide")
         translateImage.image = giftranslate
         frenchTextView.delegate = self
-        border()
-        cardViewBlackSetup()
-        cardViewWhiteSetup()
+//        border()
+//        cardViewBlackSetup()
+//        cardViewWhiteSetup()
+        cardViewWhite.makeCornerRounded(cornerRadius: 10, borderWidth: 1)
+        cardViewBlack.makeCornerRounded(cornerRadius: 10, borderWidth: 1)
+        frenchTextView.makeCornerRounded(cornerRadius: 10, borderWidth: 1.5)
+        englishTextView.makeCornerRounded(cornerRadius: 10, borderWidth: 1.5)
     }
     
     // MARK: - Methods
@@ -52,28 +56,28 @@ class TranslateViewController: UIViewController {
         }
     }
     
-    private func border() {
-        frenchTextView.layer.cornerRadius = 10
-        frenchTextView.clipsToBounds = true
-        frenchTextView.layer.borderWidth = 1.5
-        frenchTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
-        englishTextView.layer.cornerRadius = 10
-        englishTextView.clipsToBounds = true
-        englishTextView.layer.borderWidth = 1.5
-        englishTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
-    }
-    
-    private func cardViewBlackSetup() {
-        cardViewBlack.layer.cornerRadius = 10
-        cardViewBlack.clipsToBounds = true
-    }
-    
-    private func cardViewWhiteSetup() {
-        cardViewWhite.layer.cornerRadius = 10
-        cardViewWhite.clipsToBounds = true
-        cardViewWhite.layer.borderWidth = 1
-        cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
-    }
+//    private func border() {
+//        frenchTextView.layer.cornerRadius = 10
+//        frenchTextView.clipsToBounds = true
+//        frenchTextView.layer.borderWidth = 1.5
+//        frenchTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
+//        englishTextView.layer.cornerRadius = 10
+//        englishTextView.clipsToBounds = true
+//        englishTextView.layer.borderWidth = 1.5
+//        englishTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
+//    }
+//    
+//    private func cardViewBlackSetup() {
+//        cardViewBlack.layer.cornerRadius = 10
+//        cardViewBlack.clipsToBounds = true
+//    }
+//    
+//    private func cardViewWhiteSetup() {
+//        cardViewWhite.layer.cornerRadius = 10
+//        cardViewWhite.clipsToBounds = true
+//        cardViewWhite.layer.borderWidth = 1
+//        cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+//    }
 }
 
 extension TranslateViewController: UITextViewDelegate {

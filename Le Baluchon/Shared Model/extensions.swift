@@ -23,19 +23,17 @@ import UIKit
 //}
 
 extension UIView {
-    func setCornerRadius(radius: CGFloat) {
-        self.layer.cornerRadius = radius
-    }
     
-    func makeCornerRounded(cornerRadius: CGFloat, maskedCorners: CACornerMask){
+    func makeCornerRounded(cornerRadius: CGFloat, borderWidth: CGFloat){
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
-        layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
-        layer.borderWidth = 1
+        layer.borderWidth = borderWidth
         layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
 }
+
 // MARK: - Extension UIViewController
+
 extension UIViewController {
     func presentAlert(error: String) {
         let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)

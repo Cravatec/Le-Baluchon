@@ -32,9 +32,11 @@ class WeatherViewController: UIViewController {
         let gifParis = UIImage.gifImageWithName("sun")
         imageViewNY.image = gifNY
         imageViewParis.image = gifParis
-        stackviewSetup()
-        cardViewBlackSetup()
-        cardViewWhiteSetup()
+ //       stackviewSetup()
+//        cardViewBlackSetup()
+//        cardViewWhiteSetup()
+        cardViewBlack.makeCornerRounded(cornerRadius: 10, borderWidth: 1)
+        cardViewWhite.makeCornerRounded(cornerRadius: 10, borderWidth: 1)
         weather(city: "New York")
         weather(city: "Paris")
     }
@@ -48,22 +50,22 @@ class WeatherViewController: UIViewController {
     
     // MARK: - Methods
     
-    private func stackviewSetup() {
-        nyStackView.layer.cornerRadius = 10
-        nyStackView.clipsToBounds = true
-    }
+//    private func stackviewSetup() {
+//        nyStackView.layer.cornerRadius = 10
+//        nyStackView.clipsToBounds = true
+//    }
     
-    private func cardViewBlackSetup() {
-        cardViewBlack.layer.cornerRadius = 10
-        cardViewBlack.clipsToBounds = true
-    }
-    
-    private func cardViewWhiteSetup() {
-        cardViewWhite.layer.cornerRadius = 10
-        cardViewWhite.clipsToBounds = true
-        cardViewWhite.layer.borderWidth = 1
-        cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
-    }
+//    private func cardViewBlackSetup() {
+//        cardViewBlack.layer.cornerRadius = 10
+//        cardViewBlack.clipsToBounds = true
+//    }
+//
+//    private func cardViewWhiteSetup() {
+//        cardViewWhite.layer.cornerRadius = 10
+//        cardViewWhite.clipsToBounds = true
+//        cardViewWhite.layer.borderWidth = 1
+//        cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+//    }
     
     private func weather(city: String) {
         toggleActivityIndicator(shown: true)

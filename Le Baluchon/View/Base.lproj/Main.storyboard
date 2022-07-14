@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eU-oK-JLD" userLabel="CardWhite">
-                                <rect key="frame" x="15" y="128" width="398" height="715"/>
+                                <rect key="frame" x="15" y="128" width="398" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ehx-7S-Lpd" userLabel="French Text View">
@@ -89,7 +89,7 @@
                             <constraint firstItem="mO6-OB-IKz" firstAttribute="trailing" secondItem="ehx-7S-Lpd" secondAttribute="trailing" constant="15" id="HPa-NP-8Rw"/>
                             <constraint firstItem="lQ5-c7-RK9" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="20" id="LyS-4a-dt9"/>
                             <constraint firstItem="Q8A-n7-Uqe" firstAttribute="leading" secondItem="mO6-OB-IKz" secondAttribute="leading" constant="15" id="ODW-aF-ojs"/>
-                            <constraint firstItem="3eU-oK-JLD" firstAttribute="bottom" secondItem="mO6-OB-IKz" secondAttribute="bottom" id="TWh-XQ-lFK"/>
+                            <constraint firstItem="3eU-oK-JLD" firstAttribute="bottom" secondItem="dYP-kL-4DS" secondAttribute="bottom" constant="10" id="TWh-XQ-lFK"/>
                             <constraint firstItem="Q8A-n7-Uqe" firstAttribute="top" secondItem="mO6-OB-IKz" secondAttribute="top" id="VK4-et-v1v"/>
                             <constraint firstItem="3eU-oK-JLD" firstAttribute="top" secondItem="mO6-OB-IKz" secondAttribute="top" constant="40" id="W6d-s5-Nhs"/>
                             <constraint firstItem="vDL-td-t5y" firstAttribute="centerY" secondItem="ehx-7S-Lpd" secondAttribute="centerY" id="aiq-TX-Qtg"/>
@@ -148,7 +148,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-On-EZd" userLabel="CardWhite">
-                                <rect key="frame" x="15" y="128" width="398" height="715"/>
+                                <rect key="frame" x="15" y="128" width="398" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Wfi-Q5-gp2" userLabel="Paris Stack View">
@@ -293,7 +293,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Jvl-8E-US3" firstAttribute="leading" secondItem="Kgr-fZ-fbb" secondAttribute="leadingMargin" id="1wx-qk-Ck7"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Tkl-On-EZd" secondAttribute="bottom" id="6o9-9n-luk"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Tkl-On-EZd" secondAttribute="bottom" constant="-10" id="6o9-9n-luk"/>
                             <constraint firstItem="Icu-8m-zpV" firstAttribute="leading" secondItem="dTT-fA-2b3" secondAttribute="leading" constant="15" id="97n-Nf-lz4"/>
                             <constraint firstItem="dTT-fA-2b3" firstAttribute="bottom" secondItem="huQ-bM-bod" secondAttribute="bottom" constant="15" id="HMX-Ic-BAh"/>
                             <constraint firstItem="dTT-fA-2b3" firstAttribute="trailing" secondItem="Tkl-On-EZd" secondAttribute="trailing" constant="15" id="KKd-Sb-t9Y"/>

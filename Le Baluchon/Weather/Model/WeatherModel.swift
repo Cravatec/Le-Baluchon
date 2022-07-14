@@ -45,7 +45,6 @@ struct WeatherModel {
             return "sun"
         }
     }
-
     // MARK: - Init
     init(apiModel: WeatherResponse) {
         conditionId = apiModel.weather[0].id

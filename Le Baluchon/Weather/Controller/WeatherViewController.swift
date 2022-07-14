@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cardViewWhite: UIView!
@@ -26,12 +26,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var tempParisCelsiusLabel: UILabel!
     @IBOutlet weak var tempParisFahrenheitLabel: UILabel!
     
-    
-    @IBAction func tappedReloadButton(_ sender: Any) {
-        weather(city: "New York")
-        weather(city: "Paris")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let gifNY = UIImage.gifImageWithName("sun")
@@ -45,18 +39,25 @@ class WeatherViewController: UIViewController {
         weather(city: "Paris")
     }
     
+    // MARK: - IBAction
+    
+    @IBAction func tappedReloadButton(_ sender: Any) {
+        weather(city: "New York")
+        weather(city: "Paris")
+    }
+    
+    // MARK: - Methods
+    
     private func stackviewSetup() {
         nyStackView.layer.cornerRadius = 10
         nyStackView.clipsToBounds = true
-        // nyStackView.layer.borderWidth = 1.5
-        // nyStackView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
-
+    
     private func cardViewBlackSetup() {
         cardViewBlack.layer.cornerRadius = 10
         cardViewBlack.clipsToBounds = true
     }
-
+    
     private func cardViewWhiteSetup() {
         cardViewWhite.layer.cornerRadius = 10
         cardViewWhite.clipsToBounds = true
@@ -64,13 +65,10 @@ class WeatherViewController: UIViewController {
         cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
-    
-    // MARK: - Methods
     private func weather(city: String) {
         toggleActivityIndicator(shown: true)
         
-        let session = URLSession(configuration: .default)
-        WeatherAPI(session: session).fetchWeather(city: city) { [weak self] result in
+        WeatherAPI().fetchWeather(city: city) { [weak self] result in
             DispatchQueue.main.async {
                 self?.toggleActivityIndicator(shown: false)
                 switch result {
@@ -103,18 +101,9 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    /** Convert  Celsius Farenheit and return the result in Int */
-      func CelsiusToFahrenheit(temp: Double) -> Int {
-          return Int((temp * 9/5 + 32))
-      }
+    // MARK: - Convert Celsius to Fahrenheit and return the result in Int */
     
-}
-// MARK: - Extension UIViewController
-extension UIViewController {
-    func presentAlert(error: String) {
-        let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+    private func CelsiusToFahrenheit(temp: Double) -> Int {
+        return Int((temp * 9/5 + 32))
     }
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 class WeatherAPI {
-    private var session = URLSession(configuration: .default)
-    
-    init(session: URLSession) {
+    private let session: URLSession
+
+    init(session: URLSession = .shared) {
         self.session  = session
     }
     
@@ -29,17 +29,17 @@ class WeatherAPI {
     func fetchWeather(city: String, callback: @escaping (Result<WeatherModel, Error>) -> Void) {
         let request = weatherRequest(city: city)
         let task = session.dataTask(with: request) { data, response, error in
-                guard let data = data, error == nil else {
-                    callback(.failure(error!))
-                    return
-                }
-                do {
-                    let responseJSON = try JSONDecoder().decode(WeatherResponse.self, from: data)
-                    let weather = WeatherModel(apiModel: responseJSON)
-                    callback(.success(weather))
-                } catch {
-                    callback(.failure(error))
-                }
+            guard let data = data, error == nil else {
+                callback(.failure(error!))
+                return
+            }
+            do {
+                let weatherResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                let weather = WeatherModel(apiModel: weatherResponse)
+                callback(.success(weather))
+            } catch {
+                callback(.failure(error))
+            }
         }
         task.resume()
     }

@@ -10,7 +10,7 @@ import Foundation
 
 struct TranslateModel {
     let translatedText: String
-
+    
     init(apiModel: TranslateResponse) {
         translatedText = apiModel.data.translations[0].translatedText
     }

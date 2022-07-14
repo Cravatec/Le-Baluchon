@@ -8,12 +8,16 @@
 import UIKit
 
 class TranslateViewController: UIViewController {
+    
     // MARK: - IBActions
+    
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         frenchTextView.resignFirstResponder()
         englishTextView.resignFirstResponder()
     }
+    
     // MARK: - IBOutlets
+    
     @IBOutlet weak var translateImage: UIImageView!
     @IBOutlet weak var frenchTextView: UITextView!
     @IBOutlet weak var englishTextView: UITextView!
@@ -33,17 +37,21 @@ class TranslateViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
     func translateText() {
         let textToTranslate = frenchTextView.text!
-        let session = URLSession(configuration: .default)
-        TranslateApi(session: session).fetchJSON(text: textToTranslate) {(error, translation) in
-            if let translation = translation {
-                self.englishTextView.text = translation.translatedText
-            } else {
-                self.presentAlert(error: error?.localizedDescription ?? "Erreur de chargement")
+        TranslateApi().fetchTranslation(text: textToTranslate) {[weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let translation):
+                    self?.englishTextView.text = translation.translatedText
+                case .failure(let error):
+                    self?.presentAlert(error: error.localizedDescription)
+                }
             }
         }
     }
+    
     private func border() {
         frenchTextView.layer.cornerRadius = 10
         frenchTextView.clipsToBounds = true
@@ -54,18 +62,18 @@ class TranslateViewController: UIViewController {
         englishTextView.layer.borderWidth = 1.5
         englishTextView.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
     }
-
+    
     private func cardViewBlackSetup() {
-       cardViewBlack.layer.cornerRadius = 10
-       cardViewBlack.clipsToBounds = true
-   }
-
-   private func cardViewWhiteSetup() {
-       cardViewWhite.layer.cornerRadius = 10
-       cardViewWhite.clipsToBounds = true
-       cardViewWhite.layer.borderWidth = 1
-       cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
-   }
+        cardViewBlack.layer.cornerRadius = 10
+        cardViewBlack.clipsToBounds = true
+    }
+    
+    private func cardViewWhiteSetup() {
+        cardViewWhite.layer.cornerRadius = 10
+        cardViewWhite.clipsToBounds = true
+        cardViewWhite.layer.borderWidth = 1
+        cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+    }
 }
 
 extension TranslateViewController: UITextViewDelegate {

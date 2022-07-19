@@ -7,31 +7,39 @@
 
 import Foundation
 
-class TranslateApi {
+class TranslateApi
+{
     
     // MARK: - Properties
     
     private let session: URLSession
     
-    init(session: URLSession = .shared) {
+    init(session: URLSession = .shared)
+    {
         self.session = session
     }
     
     // MARK: - Methods
     
-    func fetchTranslation(text: String, callback: @escaping (Result<TranslateModel, Error>) -> Void) {
+    func fetchTranslation(text: String, callback: @escaping (Result<TranslateModel, Error>) -> Void)
+    {
         let request = createTranslationRequest(text: text)
-        let task = session.dataTask(with: request) { data, response, error in
-            DispatchQueue.main.async {
-                guard let data = data, error == nil else {
+        let task = session.dataTask(with: request)
+        { data, response, error in
+            DispatchQueue.main.async
+            {
+                guard let data = data, error == nil else
+                {
                     callback(.failure(error!))
                     return
                 }
-                do {
+                do
+                {
                     let translationResponse = try JSONDecoder().decode(TranslateResponse.self, from: data)
                     let translation = TranslateModel(apiModel: translationResponse)
                     callback(.success(translation))
-                } catch {
+                } catch
+                {
                     callback(.failure(error))
                 }
             }
@@ -39,7 +47,8 @@ class TranslateApi {
         task.resume()
     }
     
-    private func createTranslationRequest(text: String) -> URLRequest {
+    private func createTranslationRequest(text: String) -> URLRequest
+    {
         var urlConponents = URLComponents(string: "https://translation.googleapis.com/language/translate/v2")!
         urlConponents.queryItems = [URLQueryItem(name: "q", value: text),
                                     URLQueryItem(name: "key", value: Apikey.translateApiKey),

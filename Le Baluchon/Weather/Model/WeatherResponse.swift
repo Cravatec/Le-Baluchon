@@ -7,23 +7,27 @@
 
 import Foundation
 
-struct WeatherResponse: Decodable {
+struct WeatherResponse: Decodable
+{
     let weather: [Weather]
     let main: Main
     let dt: Double
     let sys: Sys
 }
 
-struct Weather: Decodable {
+struct Weather: Decodable
+{
     let id: Int
     let main: String
 }
 
-struct Main: Decodable {
+struct Main: Decodable
+{
     let temp: Double
 }
 
-struct Sys: Decodable {
+struct Sys: Decodable
+{
     let sunrise: Double
     let sunset: Double
 }

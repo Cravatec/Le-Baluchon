@@ -22,9 +22,11 @@ import UIKit
 //   }
 //}
 
-extension UIView {
+extension UIView
+{
     
-    func makeCornerRounded(cornerRadius: CGFloat, borderWidth: CGFloat){
+    func makeCornerRounded(cornerRadius: CGFloat, borderWidth: CGFloat)
+    {
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
         layer.borderWidth = borderWidth
@@ -34,23 +36,29 @@ extension UIView {
 
 // MARK: - Extension UIViewController
 
-extension UIViewController {
-    func presentAlert(error: String) {
+extension UIViewController
+{
+    func presentAlert(error: String)
+    {
         let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
 }
-extension MoneyViewController: UITextFieldDelegate {
+extension MoneyViewController: UITextFieldDelegate
+{
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
         euroTextField.resignFirstResponder()
         return true
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if euroTextField.text == "" {
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        if euroTextField.text == ""
+        {
             dollarTextField.text = "0.0"
         }
     }

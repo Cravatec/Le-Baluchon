@@ -8,22 +8,27 @@
 import Foundation
 
 
-struct TranslateModel {
+struct TranslateModel
+{
     let translatedText: String
     
-    init(apiModel: TranslateResponse) {
+    init(apiModel: TranslateResponse)
+    {
         translatedText = apiModel.data.translations[0].translatedText
     }
 }
 
-struct TranslateResponse: Decodable {
+struct TranslateResponse: Decodable
+{
     let data: DataTranslate
 }
 
-struct DataTranslate: Decodable {
+struct DataTranslate: Decodable
+{
     let translations: [Translation]
 }
 
-struct Translation: Decodable {
+struct Translation: Decodable
+{
     let translatedText: String
 }

@@ -7,15 +7,19 @@
 
 import Foundation
 
-class WeatherAPI {
+class WeatherAPI
+{
     private let session: URLSession
 
-    init(session: URLSession = .shared) {
+    init(session: URLSession = .shared)
+    {
         self.session  = session
     }
     
     // MARK: - Methods
-    private func weatherRequest(city: String) -> URLRequest {
+    
+    private func weatherRequest(city: String) -> URLRequest
+    {
         let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
         var urlComponents = URLComponents(string: baseUrl)!
         urlComponents.queryItems = [URLQueryItem(name: "q", value: city),
@@ -26,22 +30,26 @@ class WeatherAPI {
         return request
     }
     
-    func fetchWeather(city: String, callback: @escaping (Result<WeatherModel, Error>) -> Void) {
+    func fetchWeather(city: String, callback: @escaping (Result<WeatherModel, Error>) -> Void)
+    {
         let request = weatherRequest(city: city)
-        let task = session.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
+        let task = session.dataTask(with: request)
+        { data, response, error in
+            guard let data = data, error == nil else
+            {
                 callback(.failure(error!))
                 return
             }
-            do {
+            do
+            {
                 let weatherResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
                 let weather = WeatherModel(apiModel: weatherResponse)
                 callback(.success(weather))
-            } catch {
+            } catch
+            {
                 callback(.failure(error))
             }
         }
         task.resume()
     }
 }
-

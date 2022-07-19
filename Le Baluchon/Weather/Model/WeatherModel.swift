@@ -7,8 +7,11 @@
 
 import Foundation
 
-struct WeatherModel {
+struct WeatherModel
+{
+    
     // MARK: - Properties
+    
     let conditionId: Int
     let date: Double
     let temperature: Double
@@ -16,11 +19,13 @@ struct WeatherModel {
     let sunrise: Double
     let sunset: Double
     
-    var temperatureString: String {
+    var temperatureString: String
+    {
         return String(format: "%.0f", temperature)
     }
     
-    var conditionName: String {
+    var conditionName: String
+    {
         switch conditionId {
         case 1:
             return "worldwide"
@@ -45,8 +50,11 @@ struct WeatherModel {
             return "sun"
         }
     }
+    
     // MARK: - Init
-    init(apiModel: WeatherResponse) {
+    
+    init(apiModel: WeatherResponse)
+    {
         conditionId = apiModel.weather[0].id
         temperature = apiModel.main.temp
         date = apiModel.dt

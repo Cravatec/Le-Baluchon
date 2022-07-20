@@ -45,6 +45,7 @@ class TranslateViewController: UIViewController
     func translateText()
     {
         let textToTranslate = frenchTextView.text!
+        
         TranslateApi().fetchTranslation(text: textToTranslate)
         { [weak self] result in
             DispatchQueue.main.async
@@ -63,19 +64,19 @@ class TranslateViewController: UIViewController
 
 extension TranslateViewController: UITextViewDelegate
 {
-    
+
     func textViewDidEndEditing(_ textView: UITextView)
     {
         englishPlaceHolder.placeholder = ""
         translateText()
-        
+
     }
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         frenchPlaceHolder.placeholder = ""
-        
+
     }
-    
+
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool
     {
         if text == "\n"

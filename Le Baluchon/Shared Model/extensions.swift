@@ -7,20 +7,6 @@
 
 import Foundation
 import UIKit
-//
-//extension UIViewController {
-//    func cardViewBlackSetup() {
-//        WeatherViewController.cardViewBlack.layer.cornerRadius = 10
-//        WeatherViewController.cardViewBlack.clipsToBounds = true
-//   }
-//
-//    func cardViewWhiteSetup() {
-//        WeatherViewController.cardViewWhite.layer.cornerRadius = 10
-//        WeatherViewController.cardViewWhite.clipsToBounds = true
-//        WeatherViewController.cardViewWhite.layer.borderWidth = 1
-//        WeatherViewController.cardViewWhite.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
-//   }
-//}
 
 extension UIView
 {

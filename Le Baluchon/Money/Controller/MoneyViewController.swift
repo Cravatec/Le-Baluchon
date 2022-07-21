@@ -17,8 +17,6 @@ class MoneyViewController: UIViewController
         euroTextField.resignFirstResponder()
     }
     
-    
-    
     // MARK: - IBOutlets
     
     @IBOutlet weak var euroTextField: UITextField!
@@ -27,7 +25,6 @@ class MoneyViewController: UIViewController
     @IBOutlet weak var cardViewBlack: UIView!
     @IBOutlet weak var cardViewWhite: UIView!
     @IBOutlet weak var updateDate: UILabel!
-    
     
     override func viewDidLoad()
     {
@@ -38,14 +35,12 @@ class MoneyViewController: UIViewController
         cardViewWhite.makeCornerRounded(cornerRadius: 10, borderWidth: 1)
         euroTextField.delegate = self
         euroTextField.addTarget(self, action: #selector(moneyConvert), for: .editingChanged)
-      //  moneyConvert()
     }
     
     // MARK: - Methods
     
     @objc private func moneyConvert()
     {
-        
         let euroToConvert = Double(self.euroTextField.text!)
         
         MoneyApi().fetchMoney()
@@ -64,9 +59,9 @@ class MoneyViewController: UIViewController
                             self?.updateDate.text = "Update \(money.date)"
                         }
                     }
-                case .failure(_):
+                case .failure:
                     if self?.euroTextField.text != ""
-                    { self?.presentAlert(error: "Veuillez entrer un nombre !")
+                    { self?.presentAlert(error: "Une erreur s'est produite. Veuillez réessayer !")
                         self?.dollarTextField.text = "0.0"
                     }
                     return

@@ -17,18 +17,3 @@ struct TranslateModel
         translatedText = apiModel.data.translations[0].translatedText
     }
 }
-
-struct TranslateResponse: Decodable
-{
-    let data: DataTranslate
-}
-
-struct DataTranslate: Decodable
-{
-    let translations: [Translation]
-}
-
-struct Translation: Decodable
-{
-    let translatedText: String
-}

@@ -8,29 +8,48 @@
 import XCTest
 @testable import Le_Baluchon
 
-class Le_BaluchonTests: XCTestCase {
+class Le_BaluchonTests: XCTestCase
+{
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    //    override func setUpWithError() throws {
+    //        // Put setup code here. This method is called before the invocation of each test method in the class.
+    //    }
+    //
+    //    override func tearDownWithError() throws {
+    //        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    //    }
+    //
+    //    func testExample() throws {
+    //        // This is an example of a functional test case.
+    //        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    //        // Any test you write for XCTest can be annotated as throws and async.
+    //        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
+    //        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    //    }
+    //
+    //    func testPerformanceExample() throws {
+    //        // This is an example of a performance test case.
+    //        self.measure {
+    //            // Put the code you want to measure the time of here.
+    //        }
+    //    }
     
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-    
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testDownloadWebData()
+    {
+        // On crée l'expectation en lui donnant une simple description.
+        let expectation = XCTestExpectation(description: "Télécharge le site openclassrooms.com")
+        // On prépare une requête
+        let url = URL(string: "https://openclassrooms.com")!
+        let dataTask = URLSession(configuration: .default).dataTask(with: url)
+        { (data, _, _) in
+            // On vérifie qu'il y a bien des données qui ont été chargées, c'est ici que le test a lieu.
+            XCTAssertNotNil(data)
+            // On déclare que l'expectation est terminée, on peut clore le test.
+            expectation.fulfill()
         }
+        // On lance la requête.
+        dataTask.resume()
+        // On attend que l'expectation soit terminée, avec une durée maximum de 10 secondes.
+        wait(for: [expectation], timeout: 10.0)
     }
-    
 }

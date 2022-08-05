@@ -56,7 +56,7 @@ class WeatherViewController: UIViewController
     {
         toggleActivityIndicator(shown: true)
         
-        WeatherAPI().fetchWeather(city: city)
+        WeatherApi().fetchWeather(city: city)
         { [weak self] result in
             DispatchQueue.main.async
             {

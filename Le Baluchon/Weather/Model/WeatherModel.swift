@@ -27,7 +27,7 @@ struct WeatherModel
     var conditionName: String
     {
         switch conditionId {
-        case 1:
+        case 1...199:
             return "worldwide"
         case 200...232:
             return "thunder"

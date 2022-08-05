@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 
+// MARK: - UIView Extension for Corner Rounded
+
 extension UIView
 {
-    
     func makeCornerRounded(cornerRadius: CGFloat, borderWidth: CGFloat)
     {
         clipsToBounds = true
@@ -20,13 +21,13 @@ extension UIView
     }
 }
 
-// MARK: - Extension UIViewController
+// MARK: - UIViewController Extension for Alert
 
 extension UIViewController
 {
     func presentAlert(error: String)
     {
-        let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
@@ -46,7 +47,7 @@ extension MoneyViewController: UITextFieldDelegate
     {
         if euroTextField.text == ""
         {
-            dollarTextField.text = "0.0"
+            dollarTextField.text = "$"
         }
     }
 }

@@ -41,32 +41,86 @@ class MoneyViewController: UIViewController
     
     @objc private func moneyConvert()
     {
-        let euroToConvert = Double(self.euroTextField.text!)
-        
-        MoneyApi().fetchMoney()
-        { [weak self] result in DispatchQueue.main.async
-            {
-                switch result
+        let euroToConvert = Double(self.euroTextField.text!)!
+        // Check if the last api call exceeded 24h
+        if !isStorageLessThan24()
+        {
+            // fetch the rates if the last call exceeded 24h
+            MoneyApi().fetchMoney()
+            { [weak self] result in DispatchQueue.main.async
                 {
-                case .success(let money):
-                    if self?.euroTextField.text != ""
-                    { let rates = money.currencyData
-                        for (symbol, ratesUpdate) in rates
-                        {
-                            print("\(symbol) = \(ratesUpdate)")
-                            let total = euroToConvert! * ratesUpdate
-                            self?.dollarTextField.text = String(format: "%.2f", total)
-                            self?.updateDate.text = "Update \(money.date)"
+                    switch result
+                    {
+                    case .success(let money):
+                        if self?.euroTextField.text != ""
+                        { let rates = money.currencyData
+                            self?.storeDataMoney(rates: rates)
+                            self!.updateUI(amount: euroToConvert, basedOn: rates)
+                            print("get stored Rates \(String(describing: self?.getStoredRates))")
+//                            for (symbol, ratesUpdate) in rates
+//                            {
+//                                print("\(symbol) = \(ratesUpdate)")
+//                                let total = euroToConvert! * ratesUpdate
+//                                self?.dollarTextField.text = String(format: "%.2f", total)
+//                                self?.updateDate.text = "Update \(money.date)"
+//                            }
                         }
+                    case .failure:
+                        if self?.euroTextField.text != ""
+                        { self?.presentAlert(error: "Error when trying to catch the rate update")
+                            self?.dollarTextField.text = "0.0"
+                        }
+                        return
                     }
-                case .failure:
-                    if self?.euroTextField.text != ""
-                    { self?.presentAlert(error: "Une erreur s'est produite. Veuillez réessayer !")
-                        self?.dollarTextField.text = "0.0"
-                    }
-                    return
                 }
             }
         }
+    }
+    
+    private func updateUI(amount: Double, basedOn rates: [String: Double]) {
+        
+        for (symbol, ratesUpdate) in rates
+        {
+            print("\(symbol) = \(ratesUpdate)")
+
+            let total = amount * ratesUpdate
+
+            dollarTextField.text = String(format: "%.2f", total)
+            updateDate.text = "Update \(String(describing: getLastFetchDate()))"
+        }
+    }
+    
+    
+    private func storeDataMoney(rates: [String: Double])
+    {
+        UserDefaults.standard.set(rates, forKey: "rates")
+        UserDefaults.standard.set(Date(), forKey: "lastFetchDate")
+        UserDefaults.standard.synchronize()
+    }
+    
+    private func getStoredRates() -> [String: Double]?
+    {
+        let storedRates = UserDefaults.standard.dictionary(forKey: "rates")
+        return storedRates as? [String: Double]
+    }
+    
+    private func getLastFetchDate() -> Date?
+    {
+        let lastFetchDate = UserDefaults.standard.object(forKey: "lastFetchDate") as? Date
+        return lastFetchDate
+    }
+    
+    private func isStorageLessThan24() -> Bool
+    {
+        guard let lastFetchDate = getLastFetchDate() else
+        {
+            return false
+        }
+        let calendar = Calendar.current
+        let diff = calendar.dateComponents([.hour], from: lastFetchDate, to: Date()).hour
+        let hoursInDay = 24
+
+        print("Difference ==> \(String(describing: diff))")
+        return diff != nil ? diff! < hoursInDay : false
     }
 }

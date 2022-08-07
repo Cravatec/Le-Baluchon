@@ -56,7 +56,6 @@ class MoneyViewController: UIViewController
                         { let rates = money.currencyData
                             self?.storeDataMoney(rates: rates)
                             self!.updateUI(amount: euroToConvert, basedOn: rates)
-                            print("get stored Rates \(String(describing: self?.getStoredRates))")
 //                            for (symbol, ratesUpdate) in rates
 //                            {
 //                                print("\(symbol) = \(ratesUpdate)")

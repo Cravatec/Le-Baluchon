@@ -57,6 +57,9 @@ class Le_BaluchonUITests: XCTestCase
     func testTranslateSender()
     {
         // UI tests must launch the application that they test.
+        
+      //  let englishTextViewLabel = app.textViews["EnglishTextView"]
+                
         app.tabBars["Tab Bar"].buttons["Translate"].tap()
 
         let textView = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textView).element(boundBy: 0)
@@ -69,6 +72,14 @@ class Le_BaluchonUITests: XCTestCase
         app/*@START_MENU_TOKEN@*/.keys["u"]/*[[".keyboards.keys[\"u\"]",".keys[\"u\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app/*@START_MENU_TOKEN@*/.buttons["Send"]/*[[".keyboards",".buttons[\"envoyer\"]",".buttons[\"Send\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        let exp = expectation(description: "Test after 3 seconds")
+//         let result = XCTWaiter.wait(for: [exp], timeout: 3.0)
+//         if result == XCTWaiter.Result.timedOut {
+//             XCTAssertEqual( "hello", englishTextViewLabel.label)
+//         } else {
+//             XCTFail("Delay interrupted")
+//         }
+        
 //        app.textFields
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+@testable import Le_Baluchon
 
 class URLProtocolFake: URLProtocol
 {
@@ -21,7 +22,7 @@ class URLProtocolFake: URLProtocol
     }
     
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-        return request // 
+        return request
     }
     
     override func startLoading() {
@@ -97,9 +98,9 @@ class URLSessionDataTaskFake: URLSessionDataTask
     var urlResponse: URLResponse?
     var responseError: Error?
     
-    override init()
-    {
-    }
+//    override init()
+//    {
+//    }
     
     override func resume()
     {

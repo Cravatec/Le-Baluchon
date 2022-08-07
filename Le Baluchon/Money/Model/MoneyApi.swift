@@ -7,18 +7,19 @@
 
 import Foundation
 
-class MoneyApi {
+class MoneyApi
+{
     
     // MARK: - Properties
     private let session: URLSession
-
+    
     init(session: URLSession = .shared)
     {
         self.session  = session
     }
     
     // MARK: - Methods
-
+    
     private func moneyRequest() -> URLRequest
     {
         var urlConponents = URLComponents(string: "https://api.apilayer.com/fixer/latest")!

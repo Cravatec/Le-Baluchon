@@ -396,7 +396,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="qr8-vL-Uay"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="light" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="WRI-dU-rb5" id="zeW-W5-Tyd"/>
                                                 </connections>

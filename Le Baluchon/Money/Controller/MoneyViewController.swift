@@ -35,13 +35,14 @@ class MoneyViewController: UIViewController
         cardViewWhite.makeCornerRounded(cornerRadius: 10, borderWidth: 1)
         euroTextField.delegate = self
         euroTextField.addTarget(self, action: #selector(moneyConvert), for: .editingChanged)
+        print("Taux: \(String(describing: getStoredRates))")
+        print("Date: \(String(describing: getLastFetchDate))")
     }
     
     // MARK: - Methods
     
     @objc private func moneyConvert()
     {
-        let euroToConvert = Double(self.euroTextField.text!)!
         // Check if the last api call exceeded 24h
         if !isStorageLessThan24()
         {
@@ -53,16 +54,9 @@ class MoneyViewController: UIViewController
                     {
                     case .success(let money):
                         if self?.euroTextField.text != ""
-                        { let rates = money.currencyData
+                        {
+                            let rates = money.currencyData
                             self?.storeDataMoney(rates: rates)
-                            self!.updateUI(amount: euroToConvert, basedOn: rates)
-//                            for (symbol, ratesUpdate) in rates
-//                            {
-//                                print("\(symbol) = \(ratesUpdate)")
-//                                let total = euroToConvert! * ratesUpdate
-//                                self?.dollarTextField.text = String(format: "%.2f", total)
-//                                self?.updateDate.text = "Update \(money.date)"
-//                            }
                         }
                     case .failure:
                         if self?.euroTextField.text != ""
@@ -73,22 +67,22 @@ class MoneyViewController: UIViewController
                     }
                 }
             }
+        } else {
+            updateUI()
         }
     }
     
-    private func updateUI(amount: Double, basedOn rates: [String: Double]) {
-        
+    @objc private func updateUI() {
+        let euroToConvert = Double(euroTextField.text!) ?? 0.0
+        let rates = getStoredRates() ?? ["EUR": 1.0]
         for (symbol, ratesUpdate) in rates
         {
-            print("\(symbol) = \(ratesUpdate)")
-
-            let total = amount * ratesUpdate
-
+            print("1 \(symbol) = \(ratesUpdate)")
+            let total = euroToConvert * ratesUpdate
+            
             dollarTextField.text = String(format: "%.2f", total)
-            updateDate.text = "Update \(String(describing: getLastFetchDate()))"
         }
     }
-    
     
     private func storeDataMoney(rates: [String: Double])
     {
@@ -118,7 +112,7 @@ class MoneyViewController: UIViewController
         let calendar = Calendar.current
         let diff = calendar.dateComponents([.hour], from: lastFetchDate, to: Date()).hour
         let hoursInDay = 24
-
+        
         print("Difference ==> \(String(describing: diff))")
         return diff != nil ? diff! < hoursInDay : false
     }

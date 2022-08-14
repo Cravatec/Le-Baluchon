@@ -25,6 +25,7 @@ class FakeWeatherApiTests: XCTestCase
     override func tearDown()
     {
         super.tearDown()
+        weatherApi = nil
     }
     
     func testWeatherApiShouldPostFailWithError()
@@ -101,13 +102,12 @@ class FakeWeatherApiTests: XCTestCase
         { (result) in
         // Then
             guard case .success(let parisWeather) = result else {
+                XCTFail("We shouldn't have a failure")
                 return
             }
-                let main = "Clouds"
-                let temp = 20.85
                 XCTAssertNotNil(parisWeather)
-                XCTAssertEqual(main, parisWeather.main)
-                XCTAssertEqual(temp, parisWeather.temperature)
+                XCTAssertEqual("Clouds", parisWeather.main)
+                XCTAssertEqual(20.85, parisWeather.temperature)
             
             expectation.fulfill()
         }

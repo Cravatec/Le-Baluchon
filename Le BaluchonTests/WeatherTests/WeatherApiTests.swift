@@ -9,7 +9,7 @@ import Foundation
 import XCTest
 @testable import Le_Baluchon
 
-class FakeWeatherApiTests: XCTestCase
+class WeatherApiTests: XCTestCase
 {
     private var weatherApi: WeatherApi!
     

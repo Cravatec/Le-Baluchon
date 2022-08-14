@@ -9,7 +9,7 @@ import Foundation
 import XCTest
 @testable import Le_Baluchon
 
-class FakeMoneyApiTests: XCTestCase
+class MoneyApiTests: XCTestCase
 {
     
     private var moneyApi: MoneyApi!

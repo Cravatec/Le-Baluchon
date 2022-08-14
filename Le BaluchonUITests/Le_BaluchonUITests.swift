@@ -86,4 +86,9 @@ class Le_BaluchonUITests: XCTestCase
         
     }
     
+    func testNavBar() {
+        app.tabBars["Tab Bar"].buttons["Translate"].tap()
+        app.tabBars["Tab Bar"].buttons["Weather"].tap()
+        app.tabBars["Tab Bar"].buttons["Money"].tap()
+    }
 }

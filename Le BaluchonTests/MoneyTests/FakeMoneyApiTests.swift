@@ -24,6 +24,7 @@ class FakeMoneyApiTests: XCTestCase
     
     override func tearDown() {
         super.tearDown()
+        moneyApi = nil
     }
     
     func testMoneyApiFetchJSONShouldPostFailedCallbackError()
@@ -34,6 +35,7 @@ class FakeMoneyApiTests: XCTestCase
             let data: Data? = nil
             let response: URLResponse? = nil
             let error: Error? = FakeMoneyResponseData.error
+            
             return (data, response, error)
         }
         
@@ -41,7 +43,7 @@ class FakeMoneyApiTests: XCTestCase
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { result in
-            // Then
+        // Then
             switch result
             {
             case .success:
@@ -62,14 +64,14 @@ class FakeMoneyApiTests: XCTestCase
             let data: Data? = nil
             let response: URLResponse? = nil
             let error: Error? = nil
+            
             return (data, response, error)
         }
-        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { result in
-            // Then
+        // Then
             switch result
             {
             case .success(let money):
@@ -92,19 +94,16 @@ class FakeMoneyApiTests: XCTestCase
             let error: Error? = nil
             return (data, response, error)
         }
-        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
-        { result in
-            // Then
-            switch result
-            {
-            case .success(let money):
-                XCTAssertNil(money)
-            case .failure(let error):
-                XCTAssertNotNil(error)
+        { (result) in
+            guard case .failure(let error) = result else { XCTFail("failure")
+                return
             }
+            
+            XCTAssertNotNil(error)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -112,6 +111,7 @@ class FakeMoneyApiTests: XCTestCase
     
     func testMoneyApiFetchJSONShouldPostSuccessCallbackIfNoErrorAndCorrectData()
     {
+        // Given
         URLProtocolFake.requestHandler =
         { request in
             let data: Data? = FakeMoneyResponseData.moneyCorrectData
@@ -130,6 +130,60 @@ class FakeMoneyApiTests: XCTestCase
             case .failure(_):
                 XCTAssertNotNil(MoneyResponse.self)
             }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testMoneyApiShouldPostFailWithError()
+    {
+        // Given
+        URLProtocolFake.requestHandler =
+        { request in
+            let data: Data? = FakeMoneyResponseData.moneyIncorrectData
+            let response: URLResponse? = FakeMoneyResponseData.responseKO
+            let error: Error? = nil
+            return (data, response, error)
+        }
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        moneyApi.fetchMoney()
+        { (result) in
+            guard case .failure(let error) = result else { XCTFail("failure")
+                return
+            }
+            XCTAssertNotNil(error)
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testMoneyApiShouldPostSuccessWithCorrectData()
+    {
+        // Given
+        URLProtocolFake.requestHandler =
+        { request in
+            let data: Data? = FakeMoneyResponseData.moneyCorrectData
+            let response: URLResponse? = FakeMoneyResponseData.responseOK
+            let error: Error? = nil
+            return (data, response, error)
+        }
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        moneyApi.fetchMoney()
+        { (result) in
+            guard case .success(let money) = result else {
+                return
+            }
+            
+            let rates = ["EUR": 0.975335]
+            
+            XCTAssertNotNil(rates)
+            
+            XCTAssertEqual(rates, money.currencyData)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)

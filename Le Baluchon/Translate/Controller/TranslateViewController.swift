@@ -64,19 +64,19 @@ class TranslateViewController: UIViewController
 
 extension TranslateViewController: UITextViewDelegate
 {
-
+    
     func textViewDidEndEditing(_ textView: UITextView)
     {
         englishPlaceHolder.placeholder = ""
         translateText()
-
+        
     }
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         frenchPlaceHolder.placeholder = ""
-
+        
     }
-
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool
     {
         if text == "\n"

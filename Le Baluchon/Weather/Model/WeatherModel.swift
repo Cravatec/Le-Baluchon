@@ -16,8 +16,8 @@ struct WeatherModel
     let date: Double
     let temperature: Double
     let main: String
-    let sunrise: Double
     let sunset: Double
+    let sunrise: Double
     
     var temperatureString: String
     {
@@ -59,7 +59,7 @@ struct WeatherModel
         temperature = apiModel.main.temp
         date = apiModel.dt
         main = apiModel.weather[0].main
-        sunrise = apiModel.sys.sunrise
         sunset = apiModel.sys.sunset
+        sunrise = apiModel.sys.sunrise
     }
 }

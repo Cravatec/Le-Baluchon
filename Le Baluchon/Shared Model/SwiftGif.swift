@@ -1,5 +1,5 @@
 //
-//  Gif_Loader.swift
+//  SwiftGif.swift
 //  Le Baluchon
 //
 //  Created by Sam on 23/06/2022.

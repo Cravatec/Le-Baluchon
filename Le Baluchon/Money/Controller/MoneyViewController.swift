@@ -35,15 +35,13 @@ class MoneyViewController: UIViewController
         cardViewWhite.makeCornerRounded(cornerRadius: 10, borderWidth: 1)
         euroTextField.delegate = self
         euroTextField.addTarget(self, action: #selector(moneyConvert), for: .editingChanged)
-        print("Taux: \(String(describing: getStoredRates))")
-        print("Date: \(String(describing: getLastFetchDate))")
     }
     
     // MARK: - Methods
     
     @objc private func moneyConvert()
     {
-        // Check if the last api call exceeded 24h
+        // Check if the last api call exceeded 24h due to the limit of Fixer api.
         if !isStorageLessThan24()
         {
             // fetch the rates if the last call exceeded 24h
@@ -56,7 +54,8 @@ class MoneyViewController: UIViewController
                         if self?.euroTextField.text != ""
                         {
                             let rates = money.currencyData
-                            self?.storeDataMoney(rates: rates)
+                            let date = money.date
+                            self?.storeDataMoney(rates: rates, date: date)
                         }
                     case .failure:
                         if self?.euroTextField.text != ""
@@ -74,20 +73,23 @@ class MoneyViewController: UIViewController
     
     @objc private func updateUI() {
         let euroToConvert = Double(euroTextField.text!) ?? 0.0
-        let rates = getStoredRates() ?? ["EUR": 1.0]
+        let rates = getStoredRates()!
         for (symbol, ratesUpdate) in rates
         {
             print("1 \(symbol) = \(ratesUpdate)")
             let total = euroToConvert * ratesUpdate
             
             dollarTextField.text = String(format: "%.2f", total)
+//            updateDate.text = "Update \(UserDefaults.standard.string(forKey: "date") ?? "")"
+            updateDate.text = "1€ = $\(String(format: "%.2f", ratesUpdate))"
         }
     }
     
-    private func storeDataMoney(rates: [String: Double])
+    private func storeDataMoney(rates: [String: Double], date: String)
     {
         UserDefaults.standard.set(rates, forKey: "rates")
         UserDefaults.standard.set(Date(), forKey: "lastFetchDate")
+        UserDefaults.standard.set(date, forKey: "date")
         UserDefaults.standard.synchronize()
     }
     

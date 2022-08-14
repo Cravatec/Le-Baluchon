@@ -123,53 +123,16 @@ class TranslateApiTestCase: XCTestCase
         
         translateApi.fetchTranslation(text: translateFakeText) { (result) in
             guard case .success(let translateFrench) = result else {
+               XCTFail("We shouldn't have a failure")
                 return
             }
-            let translatedText = "Does it work ?"
             
-            XCTAssertNotNil(translatedText)
+            XCTAssertNotNil(translateFrench.translatedText)
             
-            XCTAssertEqual(translatedText, translateFrench.translatedText)
-            
+            XCTAssertEqual("Does it work ?", translateFrench.translatedText)
             
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
     }
 }
-
-//extension XCTestCase {
-//    func runAsyncTest(
-//        named TranslateApiTestCase: String = #function,
-//        in file: StaticString = #file,
-//        at line: UInt = #line,
-//        withTimeout timeout: TimeInterval = 10,
-//        test: @escaping () async throws -> Void)
-//    {
-//        var thrownError: Error?
-//        let errorHandler = { thrownError = $0 }
-//        let expectation = expectation(description: TranslateApiTestCase)
-//
-//        Task
-//        { do
-//        {
-//            try await test()
-//        } catch
-//            {
-//            errorHandler(error)
-//        }
-//
-//            expectation.fulfill()
-//        }
-//
-//        waitForExpectations(timeout: timeout)
-//
-//        if let error = thrownError
-//        {
-//            XCTFail(
-//                "Async error thrown: \(error)",
-//                file: file,
-//                line: line)
-//        }
-//    }
-//}

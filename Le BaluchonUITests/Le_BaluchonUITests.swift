@@ -11,6 +11,9 @@ import XCTest
 class Le_BaluchonUITests: XCTestCase
 {
     var app:XCUIApplication!
+    var englishTextViewLabel: XCUIElement {
+        app.textViews["EnglishTextView"]
+    }
     
     override func setUpWithError() throws
     {
@@ -25,40 +28,19 @@ class Le_BaluchonUITests: XCTestCase
         XCUIDevice.shared.orientation = .portrait
     }
     
-    override func tearDownWithError() throws
-    {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    func testExample() throws
-    {
-        // UI tests must launch the application that they test.
-        
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-//    func testLaunchPerformance() throws {
-//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-//            // This measures how long it takes to launch your application.
-//            measure(metrics: [XCTApplicationLaunchMetric()]) {
-//                XCUIApplication().launch()
-//            }
-//        }
-//    }
-    
     func testWeatherReloadButton() throws
     {
         // UI tests must launch the application that they test.
         app.tabBars["Tab Bar"].buttons["Weather"].tap()
         app/*@START_MENU_TOKEN@*/.staticTexts["Reload"]/*[[".buttons[\"Reload\"].staticTexts[\"Reload\"]",".staticTexts[\"Reload\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
     }
     
     func testTranslateSender()
     {
         // UI tests must launch the application that they test.
         
-      //  let englishTextViewLabel = app.textViews["EnglishTextView"]
+//       let englishTextViewLabel = app.textViews["EnglishTextView"]
                 
         app.tabBars["Tab Bar"].buttons["Translate"].tap()
 
@@ -73,12 +55,18 @@ class Le_BaluchonUITests: XCTestCase
         app/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app/*@START_MENU_TOKEN@*/.buttons["Send"]/*[[".keyboards",".buttons[\"envoyer\"]",".buttons[\"Send\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
 //        let exp = expectation(description: "Test after 3 seconds")
-//         let result = XCTWaiter.wait(for: [exp], timeout: 3.0)
+//        exp.assertForOverFulfill = true
+//        exp.fulfill()
+//        wait(for: [exp], timeout: 3.0)
+//        print("Hello \(englishTextViewLabel.label) !")
+//        XCTAssertEqual("hello", englishTextViewLabel.label)
+//
 //         if result == XCTWaiter.Result.timedOut {
-//             XCTAssertEqual( "hello", englishTextViewLabel.label)
+//             XCTAssertEqual("hello", englishTextViewLabel.label)
 //         } else {
 //             XCTFail("Delay interrupted")
 //         }
+//        wait(for: [exp], timeout: 3.0)
         
 //        app.textFields
 

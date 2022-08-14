@@ -1,5 +1,5 @@
 //
-//  FakeMoneyApiTests.swift
+//  MoneyApiTests.swift
 //  Le BaluchonTests
 //
 //  Created by Sam on 21/07/2022.
@@ -63,7 +63,7 @@ class MoneyApiTests: XCTestCase
         { request in
             let data: Data? = nil
             let response: URLResponse? = nil
-            let error: Error? = nil
+            let error: Error? = FakeMoneyResponseData.error
             
             return (data, response, error)
         }
@@ -74,10 +74,10 @@ class MoneyApiTests: XCTestCase
         // Then
             switch result
             {
-            case .success(let money):
-                XCTAssertNil(money)
-            case .failure:
-                XCTAssertNotNil("We should have a success case")
+            case .success:
+                XCTFail("We should have a failure case")
+            case .failure(let error):
+                XCTAssertNotNil(error)
             }
             expectation.fulfill()
         }
@@ -98,7 +98,8 @@ class MoneyApiTests: XCTestCase
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { (result) in
-            guard case .failure(let error) = result else { XCTFail("failure")
+            guard case .failure(let error) = result else {
+                XCTFail("We should have a failure")
                 return
             }
             
@@ -125,10 +126,14 @@ class MoneyApiTests: XCTestCase
         moneyApi.fetchMoney() { result in
             // Then
             switch result {
-            case .success(_):
-                XCTAssertNotNil(Any?.self)
-            case .failure(_):
-                XCTAssertNotNil(MoneyResponse.self)
+            case .success(let moneyModel):
+                XCTAssertNotNil(moneyModel)
+                XCTAssertNotNil(moneyModel.currencyData)
+                let euroRate = moneyModel.currencyData["EUR"]
+                XCTAssertNotNil(euroRate)
+                XCTAssertEqual(0.975335, euroRate)
+            case .failure:
+                XCTFail("We should not fail here")
             }
             expectation.fulfill()
         }
@@ -140,9 +145,9 @@ class MoneyApiTests: XCTestCase
         // Given
         URLProtocolFake.requestHandler =
         { request in
-            let data: Data? = FakeMoneyResponseData.moneyIncorrectData
+            let data: Data? = nil
             let response: URLResponse? = FakeMoneyResponseData.responseKO
-            let error: Error? = nil
+            let error: Error? = FakeMoneyResponseData.error
             return (data, response, error)
         }
         
@@ -150,7 +155,8 @@ class MoneyApiTests: XCTestCase
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { (result) in
-            guard case .failure(let error) = result else { XCTFail("failure")
+            guard case .failure(let error) = result else {
+                XCTFail("We shouldn't have a success case")
                 return
             }
             XCTAssertNotNil(error)

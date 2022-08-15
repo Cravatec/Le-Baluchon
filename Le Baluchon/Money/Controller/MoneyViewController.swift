@@ -24,8 +24,9 @@ class MoneyViewController: UIViewController
     @IBOutlet weak var moneyImage: UIImageView!
     @IBOutlet weak var cardViewBlack: UIView!
     @IBOutlet weak var cardViewWhite: UIView!
-    @IBOutlet weak var updateDate: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
     
+    @IBOutlet weak var updateLabel: UILabel!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -80,8 +81,8 @@ class MoneyViewController: UIViewController
             let total = euroToConvert * ratesUpdate
             
             dollarTextField.text = String(format: "%.2f", total)
-//            updateDate.text = "Update \(UserDefaults.standard.string(forKey: "date") ?? "")"
-            updateDate.text = "1€ = $\(String(format: "%.2f", ratesUpdate))"
+            updateLabel.text = "Update \(UserDefaults.standard.string(forKey: "date") ?? "")"
+            rateLabel.text = "1€ = $\(String(format: "%.2f", ratesUpdate))"
         }
     }
     

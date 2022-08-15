@@ -20,4 +20,5 @@ struct DataTranslate: Decodable
 struct Translation: Decodable
 {
     let translatedText: String
+    let detectedSourceLanguage: String
 }

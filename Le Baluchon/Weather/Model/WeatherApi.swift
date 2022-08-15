@@ -16,6 +16,8 @@ class WeatherApi
         self.session  = session
     }
     
+    static var shared = WeatherApi()
+    
     // MARK: - Methods
     
     private func weatherRequest(city: String) -> URLRequest
@@ -52,4 +54,18 @@ class WeatherApi
         }
         task.resume()
     }
+    
+    func dateConvert(unix: Double) -> String
+    {
+            let date = Date(timeIntervalSince1970: TimeInterval(unix))
+            let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+         
+        formatter.dateFormat =
+        "dd/MM/YYYY HH:mm"
+
+            let dateString = formatter.string(from: date)
+            return dateString
+    }
+    
 }

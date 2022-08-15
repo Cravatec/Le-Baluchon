@@ -16,6 +16,7 @@ class WeatherViewController: UIViewController
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cardViewWhite: UIView!
     @IBOutlet weak var cardViewBlack: UIView!
+    @IBOutlet weak var updateWeatherLabel: UILabel!
     //New York
     @IBOutlet weak var nyStackView: UIStackView!
     @IBOutlet weak var descriptionNYWeatherLabel: UILabel!
@@ -87,6 +88,7 @@ class WeatherViewController: UIViewController
             self.imageViewNY.image = UIImage.gifImageWithName("\(weather.conditionName)")
             self.descriptionNYWeatherLabel.text = "🔎 \(weather.main)"
             self.tempNYFahrenheitLabel.text = "🌡\(CelsiusToFahrenheit(temp: weather.temperature))°F"
+            updateWeatherLabel.text = "Update: \(WeatherApi.shared.dateConvert(unix: weather.date))"
         }    else if city == "Paris"
         {
             self.tempParisCelsiusLabel.text = "🌡\(weather.temperatureString)°C"

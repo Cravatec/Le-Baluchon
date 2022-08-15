@@ -54,6 +54,7 @@ class TranslateViewController: UIViewController
                 {
                 case .success(let translation):
                     self?.englishTextView.text = translation.translatedText
+                    print(translation.detectedSourceLanguage)
                 case .failure(let error):
                     self?.presentAlert(error: error.localizedDescription)
                 }

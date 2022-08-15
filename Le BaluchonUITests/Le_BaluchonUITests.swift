@@ -39,8 +39,6 @@ class Le_BaluchonUITests: XCTestCase
     func testTranslateSender()
     {
         // UI tests must launch the application that they test.
-        
-//       let englishTextViewLabel = app.textViews["EnglishTextView"]
                 
         app.tabBars["Tab Bar"].buttons["Translate"].tap()
 
@@ -54,24 +52,6 @@ class Le_BaluchonUITests: XCTestCase
         app/*@START_MENU_TOKEN@*/.keys["u"]/*[[".keyboards.keys[\"u\"]",".keys[\"u\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app/*@START_MENU_TOKEN@*/.buttons["Send"]/*[[".keyboards",".buttons[\"envoyer\"]",".buttons[\"Send\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
-//        let exp = expectation(description: "Test after 3 seconds")
-//        exp.assertForOverFulfill = true
-//        exp.fulfill()
-//        wait(for: [exp], timeout: 3.0)
-//        print("Hello \(englishTextViewLabel.label) !")
-//        XCTAssertEqual("hello", englishTextViewLabel.label)
-//
-//         if result == XCTWaiter.Result.timedOut {
-//             XCTAssertEqual("hello", englishTextViewLabel.label)
-//         } else {
-//             XCTFail("Delay interrupted")
-//         }
-//        wait(for: [exp], timeout: 3.0)
-        
-//        app.textFields
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
     }
     
     func testNavBar() {

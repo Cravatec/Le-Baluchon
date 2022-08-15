@@ -17,37 +17,42 @@ class URLProtocolFake: URLProtocol
     
     static var requestHandler: ((URLRequest) throws -> (Data?, URLResponse?, Error?))?
     
-    override class func canInit(with request: URLRequest) -> Bool {
+    override class func canInit(with request: URLRequest) -> Bool
+    {
         return true // Check if can handle the given request
     }
     
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest
+    {
         return request
     }
     
     override func startLoading() {
-        guard let handler = URLProtocolFake.requestHandler else {
+        guard let handler = URLProtocolFake.requestHandler else
+        {
             return
         }
         
         do {
             let (data, response, error) = try handler(request)
-            if let response = response  {
+            if let response = response
+            {
                 client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-           }
-            if let data = data {
+            }
+            if let data = data
+            {
                 client?.urlProtocol(self, didLoad: data)
             }
-            if let error = error {
+            if let error = error
+            {
                 client?.urlProtocol(self, didFailWithError: error)
             }
             client?.urlProtocolDidFinishLoading(self)
         }
-        catch {
+        catch
+        {
             client?.urlProtocol(self, didFailWithError: error)
         }
-        
-        
     }
     
     override func stopLoading()

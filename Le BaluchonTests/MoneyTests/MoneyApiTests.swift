@@ -38,12 +38,11 @@ class MoneyApiTests: XCTestCase
             
             return (data, response, error)
         }
-        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { result in
-        // Then
+            // Then
             switch result
             {
             case .success:
@@ -71,7 +70,7 @@ class MoneyApiTests: XCTestCase
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { result in
-        // Then
+            // Then
             switch result
             {
             case .success:
@@ -98,7 +97,9 @@ class MoneyApiTests: XCTestCase
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { (result) in
-            guard case .failure(let error) = result else {
+            // Then
+            guard case .failure(let error) = result else
+            {
                 XCTFail("We should have a failure")
                 return
             }
@@ -120,12 +121,12 @@ class MoneyApiTests: XCTestCase
             let error: Error? = nil
             return (data, response, error)
         }
-        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney() { result in
             // Then
-            switch result {
+            switch result
+            {
             case .success(let moneyModel):
                 XCTAssertNotNil(moneyModel)
                 XCTAssertNotNil(moneyModel.currencyData)
@@ -150,12 +151,14 @@ class MoneyApiTests: XCTestCase
             let error: Error? = FakeMoneyResponseData.error
             return (data, response, error)
         }
-        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { (result) in
-            guard case .failure(let error) = result else {
+            // Then
+            
+            guard case .failure(let error) = result else
+            {
                 XCTFail("We shouldn't have a success case")
                 return
             }
@@ -180,7 +183,9 @@ class MoneyApiTests: XCTestCase
         let expectation = XCTestExpectation(description: "Wait for queue change")
         moneyApi.fetchMoney()
         { (result) in
-            guard case .success(let money) = result else {
+            // Then
+            guard case .success(let money) = result else
+            {
                 return
             }
             

@@ -9,7 +9,6 @@ import UIKit
 
 class WeatherViewController: UIViewController
 {
-
     // MARK: - IBOutlets
     
     @IBOutlet weak var reloadButton: UIButton!

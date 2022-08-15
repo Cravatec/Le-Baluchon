@@ -43,9 +43,11 @@ class TranslateApiTestCase: XCTestCase
         }
         // When
         let expectation = XCTestExpectation(description: "wait for change")
-        
-        translateApi.fetchTranslation(text: translateFakeText) { (result) in
-            guard case .failure(let error) = result else { XCTFail("failure")
+        translateApi.fetchTranslation(text: translateFakeText)
+        { (result) in
+            // Then
+            guard case .failure(let error) = result else
+            { XCTFail("failure")
                 return
             }
             
@@ -67,13 +69,13 @@ class TranslateApiTestCase: XCTestCase
             let error: Error? = nil
             return (data, response, error)
         }
-        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        
         translateApi.fetchTranslation(text: translateFakeText)
         { (result) in
-            guard case .failure(let error) = result else { XCTFail("failure")
+            // Then
+            guard case .failure(let error) = result else
+            { XCTFail("failure")
                 return
             }
             
@@ -98,8 +100,7 @@ class TranslateApiTestCase: XCTestCase
         let expectation = XCTestExpectation(description: "Wait for queue change")
         translateApi.fetchTranslation(text: translateFakeText)
         { (result) in
-        // Then
-            print(result)
+            // Then
             guard case .failure(_) = result else
             { XCTFail("failure")
                 return
@@ -121,9 +122,12 @@ class TranslateApiTestCase: XCTestCase
         // When
         let expectation = XCTestExpectation(description: "wait for change")
         
-        translateApi.fetchTranslation(text: translateFakeText) { (result) in
-            guard case .success(let translateFrench) = result else {
-               XCTFail("We shouldn't have a failure")
+        translateApi.fetchTranslation(text: translateFakeText)
+        { (result) in
+            // Then
+            guard case .success(let translateFrench) = result else
+            {
+                XCTFail("We shouldn't have a failure")
                 return
             }
             

@@ -39,13 +39,14 @@ class WeatherApiTests: XCTestCase
             
             return (data, response, error)
         }
-        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
         
         weatherApi.fetchWeather(city: "Paris")
         { (result) in
-            guard case .failure(let error) = result else { XCTFail("failure")
+            // Then
+            guard case .failure(let error) = result else
+            { XCTFail("failure")
                 return
             }
             
@@ -72,7 +73,9 @@ class WeatherApiTests: XCTestCase
         
         weatherApi.fetchWeather(city: "Paris")
         { (result) in
-            guard case .failure(let error) = result else { XCTFail("failure")
+            // Then
+            guard case .failure(let error) = result else
+            { XCTFail("failure")
                 return
             }
             
@@ -101,7 +104,8 @@ class WeatherApiTests: XCTestCase
         weatherApi.fetchWeather(city: "Paris")
         { (result) in
         // Then
-            guard case .success(let parisWeather) = result else {
+            guard case .success(let parisWeather) = result else
+            {
                 XCTFail("We shouldn't have a failure")
                 return
             }

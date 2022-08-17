@@ -14,7 +14,8 @@ class MoneyApiTests: XCTestCase
     
     private var moneyApi: MoneyApi!
     
-    override func setUp() {
+    override func setUp()
+    {
         super.setUp()
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [URLProtocolFake.self]
@@ -22,7 +23,8 @@ class MoneyApiTests: XCTestCase
         moneyApi = MoneyApi(session: urlSession)
     }
     
-    override func tearDown() {
+    override func tearDown()
+    {
         super.tearDown()
         moneyApi = nil
     }
@@ -123,7 +125,8 @@ class MoneyApiTests: XCTestCase
         }
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        moneyApi.fetchMoney() { result in
+        moneyApi.fetchMoney()
+        { result in
             // Then
             switch result
             {

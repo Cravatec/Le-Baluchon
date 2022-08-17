@@ -77,7 +77,7 @@ class MoneyViewController: UIViewController
         let rates = getStoredRates()!
         for (symbol, ratesUpdate) in rates
         {
-            print("1 \(symbol) = \(ratesUpdate)")
+            print("1 \(symbol) = $\(ratesUpdate)")
             let total = euroToConvert * ratesUpdate
             
             dollarTextField.text = String(format: "%.2f", total)

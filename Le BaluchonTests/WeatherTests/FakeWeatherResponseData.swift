@@ -10,7 +10,8 @@ import Foundation
 class FakeWeatherResponseData
 {
     // MARK: - Data
-    static var weatherCorrectData: Data? {
+    static var weatherCorrectData: Data?
+    {
         let bundle = Bundle(for: FakeWeatherResponseData.self)
         let url = bundle.url(forResource: "FakeWeatherResponse", withExtension: "json")!
         return try! Data(contentsOf: url)

@@ -9,7 +9,6 @@ import UIKit
 
 class TranslateViewController: UIViewController
 {
-    
     // MARK: - IBActions
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer)

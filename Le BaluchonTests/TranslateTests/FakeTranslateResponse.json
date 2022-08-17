@@ -1,6 +1,8 @@
 {
-    "data": {
-        "translations": [
+    "data":
+    {
+        "translations":
+        [
             {
                 "translatedText": "Does it work ?",
                 "detectedSourceLanguage": "fr"

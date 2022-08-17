@@ -10,7 +10,8 @@ import Foundation
 class FakeMoneyResponseData
 {
     // MARK: - Data
-    static var moneyCorrectData: Data? {
+    static var moneyCorrectData: Data?
+    {
         let bundle = Bundle(for: FakeMoneyResponseData.self)
         let url = bundle.url(forResource: "FakeMoneyResponse", withExtension: "json")!
         return try! Data(contentsOf: url)

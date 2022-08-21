@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2201C71128B25C3F007D6279 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201C71028B25C3F007D6279 /* WeatherApi.swift */; };
 		2203E24328894C5B0028F531 /* FakeMoneyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2203E24228894C5B0028F531 /* FakeMoneyResponse.json */; };
 		2203E24528894CB20028F531 /* FakeWeatherResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2203E24428894CB20028F531 /* FakeWeatherResponse.json */; };
 		2203E24728894D000028F531 /* WeatherApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203E24628894D000028F531 /* WeatherApiTests.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2201C71028B25C3F007D6279 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
 		2203E24228894C5B0028F531 /* FakeMoneyResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeMoneyResponse.json; sourceTree = "<group>"; };
 		2203E24428894CB20028F531 /* FakeWeatherResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeWeatherResponse.json; sourceTree = "<group>"; };
 		2203E24628894D000028F531 /* WeatherApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiTests.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		226F0679286618E2001B416D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2201C71028B25C3F007D6279 /* WeatherApi.swift */,
 				226F0674286616E1001B416D /* WeatherModel.swift */,
 				22D15D3C287706B10025189D /* WeatherResponse.swift */,
 			);
@@ -546,6 +549,7 @@
 				22FFD4AC2865C56500304F76 /* MoneyViewController.swift in Sources */,
 				226F06682865E1B5001B416D /* TranslateViewController.swift in Sources */,
 				2226788E2887E9C90068F9BD /* TranslateResponse.swift in Sources */,
+				2201C71128B25C3F007D6279 /* WeatherApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

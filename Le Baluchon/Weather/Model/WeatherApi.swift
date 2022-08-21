@@ -67,5 +67,4 @@ class WeatherApi
             let dateString = formatter.string(from: date)
             return dateString
     }
-    
 }

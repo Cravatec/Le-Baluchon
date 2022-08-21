@@ -29,7 +29,6 @@
 		226F066B2865E8CC001B416D /* worldwide.gif in Resources */ = {isa = PBXBuildFile; fileRef = 226F06692865E8CC001B416D /* worldwide.gif */; };
 		226F066C2865E8CC001B416D /* euro.gif in Resources */ = {isa = PBXBuildFile; fileRef = 226F066A2865E8CC001B416D /* euro.gif */; };
 		226F066E2865E8DF001B416D /* thunder.gif in Resources */ = {isa = PBXBuildFile; fileRef = 226F066D2865E8DF001B416D /* thunder.gif */; };
-		226F06702865F77E001B416D /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F066F2865F77E001B416D /* WeatherApi.swift */; };
 		226F06732865F80B001B416D /* apikey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F06722865F80B001B416D /* apikey.swift */; };
 		226F0675286616E1001B416D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F0674286616E1001B416D /* WeatherModel.swift */; };
 		228B3102286322DE00B7B1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B3101286322DE00B7B1F0 /* AppDelegate.swift */; };
@@ -96,7 +95,6 @@
 		226F06692865E8CC001B416D /* worldwide.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = worldwide.gif; sourceTree = "<group>"; };
 		226F066A2865E8CC001B416D /* euro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = euro.gif; sourceTree = "<group>"; };
 		226F066D2865E8DF001B416D /* thunder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = thunder.gif; sourceTree = "<group>"; };
-		226F066F2865F77E001B416D /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
 		226F06722865F80B001B416D /* apikey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apikey.swift; sourceTree = "<group>"; };
 		226F0674286616E1001B416D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		228B30FE286322DE00B7B1F0 /* Le Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Le Baluchon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +170,6 @@
 		226F0679286618E2001B416D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				226F066F2865F77E001B416D /* WeatherApi.swift */,
 				226F0674286616E1001B416D /* WeatherModel.swift */,
 				22D15D3C287706B10025189D /* WeatherResponse.swift */,
 			);
@@ -546,7 +543,6 @@
 				223983F12879CA0000AEF36F /* MoneyModel.swift in Sources */,
 				228B3104286322DE00B7B1F0 /* SceneDelegate.swift in Sources */,
 				226F06732865F80B001B416D /* apikey.swift in Sources */,
-				226F06702865F77E001B416D /* WeatherApi.swift in Sources */,
 				22FFD4AC2865C56500304F76 /* MoneyViewController.swift in Sources */,
 				226F06682865E1B5001B416D /* TranslateViewController.swift in Sources */,
 				2226788E2887E9C90068F9BD /* TranslateResponse.swift in Sources */,

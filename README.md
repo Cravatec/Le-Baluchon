@@ -1,6 +1,6 @@
 # Le-Baluchon
 
-**Le Baluchon** is an iPhone app code in Swift for iOS 13, 14, 15.
+**Le Baluchon** is an iPhone app, code in Swift for iOS 13, 14, 15.
 
 ![This is an image](https://image.noelshack.com/fichiers/2022/33/2/1660671175-weather.gif)
 
